@@ -76,6 +76,7 @@ class DownloaderViewController: UIViewController, DownloaderViewProtocol {
     private func didTapButton() {
         if let url = urlTextField.text {
             presenter?.loadImage(url)
+            urlTextField.text = ""
         }
     }
     

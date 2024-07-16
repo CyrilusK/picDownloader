@@ -16,6 +16,14 @@
 		A5CB6D472C4517C100AF032B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D462C4517C100AF032B /* Protocols.swift */; };
 		A5CB6D492C451E6200AF032B /* DownloaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D482C451E6200AF032B /* DownloaderPresenter.swift */; };
 		A5CB6D4B2C452B4B00AF032B /* DownloaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D4A2C452B4B00AF032B /* DownloaderInteractor.swift */; };
+		A5CB6D522C45419700AF032B /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D512C45419700AF032B /* TabbarController.swift */; };
+		A5CB6D552C4543D900AF032B /* SavedPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D542C4543D900AF032B /* SavedPicturesViewController.swift */; };
+		A5CB6D5C2C457DE700AF032B /* SavedPicturesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D5B2C457DE700AF032B /* SavedPicturesPresenter.swift */; };
+		A5CB6D5E2C45802E00AF032B /* SavedPicturesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D5D2C45802E00AF032B /* SavedPicturesDataSource.swift */; };
+		A5CB6D602C4580BA00AF032B /* SavedPicturesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D5F2C4580BA00AF032B /* SavedPicturesDelegate.swift */; };
+		A5CB6D632C45842900AF032B /* SavedPicturesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D622C45842900AF032B /* SavedPicturesInteractor.swift */; };
+		A5CB6D662C4584D000AF032B /* SavedPicturesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D652C4584D000AF032B /* SavedPicturesConfigurator.swift */; };
+		A5CB6D682C465C7400AF032B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D672C465C7400AF032B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		A5CB6D462C4517C100AF032B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A5CB6D482C451E6200AF032B /* DownloaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderPresenter.swift; sourceTree = "<group>"; };
 		A5CB6D4A2C452B4B00AF032B /* DownloaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderInteractor.swift; sourceTree = "<group>"; };
+		A5CB6D512C45419700AF032B /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		A5CB6D542C4543D900AF032B /* SavedPicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesViewController.swift; sourceTree = "<group>"; };
+		A5CB6D5B2C457DE700AF032B /* SavedPicturesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesPresenter.swift; sourceTree = "<group>"; };
+		A5CB6D5D2C45802E00AF032B /* SavedPicturesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesDataSource.swift; sourceTree = "<group>"; };
+		A5CB6D5F2C4580BA00AF032B /* SavedPicturesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesDelegate.swift; sourceTree = "<group>"; };
+		A5CB6D622C45842900AF032B /* SavedPicturesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesInteractor.swift; sourceTree = "<group>"; };
+		A5CB6D652C4584D000AF032B /* SavedPicturesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesConfigurator.swift; sourceTree = "<group>"; };
+		A5CB6D672C465C7400AF032B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +78,7 @@
 		A5CB6D252C45075A00AF032B /* pictureDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				A5CB6D4C2C453F5B00AF032B /* TabBarModule */,
 				A5CB6D3D2C450D2300AF032B /* SavedPicturesModule */,
 				A5CB6D3A2C450CEA00AF032B /* DownloaderModule */,
 				A5CB6D262C45075A00AF032B /* AppDelegate.swift */,
@@ -70,6 +87,7 @@
 				A5CB6D2F2C45075B00AF032B /* Assets.xcassets */,
 				A5CB6D312C45075B00AF032B /* LaunchScreen.storyboard */,
 				A5CB6D342C45075B00AF032B /* Info.plist */,
+				A5CB6D672C465C7400AF032B /* Constants.swift */,
 			);
 			path = pictureDownloader;
 			sourceTree = "<group>";
@@ -89,6 +107,12 @@
 		A5CB6D3D2C450D2300AF032B /* SavedPicturesModule */ = {
 			isa = PBXGroup;
 			children = (
+				A5CB6D642C4584B300AF032B /* Configurator */,
+				A5CB6D612C4583F600AF032B /* Interactor */,
+				A5CB6D5A2C457AA100AF032B /* Presenter */,
+				A5CB6D532C4543B700AF032B /* View */,
+				A5CB6D5D2C45802E00AF032B /* SavedPicturesDataSource.swift */,
+				A5CB6D5F2C4580BA00AF032B /* SavedPicturesDelegate.swift */,
 			);
 			path = SavedPicturesModule;
 			sourceTree = "<group>";
@@ -130,6 +154,78 @@
 				A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A5CB6D4C2C453F5B00AF032B /* TabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB6D502C45412100AF032B /* Configurator */,
+				A5CB6D4F2C453F8600AF032B /* Router */,
+				A5CB6D4E2C453F7B00AF032B /* Presenter */,
+				A5CB6D4D2C453F6B00AF032B /* View */,
+			);
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		A5CB6D4D2C453F6B00AF032B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB6D512C45419700AF032B /* TabbarController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5CB6D4E2C453F7B00AF032B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A5CB6D4F2C453F8600AF032B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A5CB6D502C45412100AF032B /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A5CB6D532C4543B700AF032B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB6D542C4543D900AF032B /* SavedPicturesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5CB6D5A2C457AA100AF032B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB6D5B2C457DE700AF032B /* SavedPicturesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A5CB6D612C4583F600AF032B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB6D622C45842900AF032B /* SavedPicturesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A5CB6D642C4584B300AF032B /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB6D652C4584D000AF032B /* SavedPicturesConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,12 +299,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CB6D472C4517C100AF032B /* Protocols.swift in Sources */,
+				A5CB6D662C4584D000AF032B /* SavedPicturesConfigurator.swift in Sources */,
+				A5CB6D5C2C457DE700AF032B /* SavedPicturesPresenter.swift in Sources */,
 				A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */,
+				A5CB6D602C4580BA00AF032B /* SavedPicturesDelegate.swift in Sources */,
+				A5CB6D682C465C7400AF032B /* Constants.swift in Sources */,
+				A5CB6D522C45419700AF032B /* TabbarController.swift in Sources */,
 				A5CB6D402C450EE300AF032B /* DownloaderConfigurator.swift in Sources */,
 				A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */,
+				A5CB6D632C45842900AF032B /* SavedPicturesInteractor.swift in Sources */,
+				A5CB6D5E2C45802E00AF032B /* SavedPicturesDataSource.swift in Sources */,
 				A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */,
 				A5CB6D492C451E6200AF032B /* DownloaderPresenter.swift in Sources */,
 				A5CB6D4B2C452B4B00AF032B /* DownloaderInteractor.swift in Sources */,
+				A5CB6D552C4543D900AF032B /* SavedPicturesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

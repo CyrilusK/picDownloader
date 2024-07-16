@@ -42,4 +42,3 @@ protocol DownloaderConfiguratorProtocol {
     static func configure() -> UIViewController
 }
 
-

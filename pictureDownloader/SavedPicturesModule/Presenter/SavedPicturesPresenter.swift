@@ -35,4 +35,11 @@ class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
     }
 }
 
+extension SavedPicturesPresenter: DownloaderDelegate {
+    func didSaveImage() {
+        print("didSaveImage called")
+        interactor?.fetchSavedImages()
+    }
+}
+
 

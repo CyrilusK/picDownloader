@@ -12,12 +12,15 @@ class SavedPicturesConfigurator {
         let view = SavedPicturesViewController()
         let presenter = SavedPicturesPresenter()
         let interactor = SavedPicturesInteractor()
+        let downloader = DownloaderPresenter()
         
         view.presenter = presenter
         presenter.view = view
         presenter.interactor = interactor
         interactor.presenter = presenter
         
+        downloader.delegate = presenter
+        print("download.delegate assigned to self")
         return view
     }
 }

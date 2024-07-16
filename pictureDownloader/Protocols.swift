@@ -42,6 +42,10 @@ protocol DownloaderConfiguratorProtocol {
     static func configure() -> UIViewController
 }
 
+protocol DownloaderInteractorDelegate: AnyObject {
+    func didFinishDownloadingImage(_ image: UIImage)
+}
+
 protocol SavedPicturesInteractorProtocol: AnyObject {
     var presenter: SavedPicturesPresenterProtocol? { get set }
     

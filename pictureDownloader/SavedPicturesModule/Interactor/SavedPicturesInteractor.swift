@@ -9,7 +9,6 @@ import UIKit
 
 class SavedPicturesInteractor: SavedPicturesInteractorProtocol {
     weak var presenter: SavedPicturesPresenterProtocol?
-    private let cache = NSCache<NSString, UIImage>()
     
     func fetchSavedImages() {
         var images = [UIImage]()
@@ -34,7 +33,6 @@ class SavedPicturesInteractor: SavedPicturesInteractorProtocol {
                 print("[DEBUG] - Error loading image at path: \(fileUrl.path)")
             }
         }
-        print(images.count)
         presenter?.didLoadImages(images)
     }
     

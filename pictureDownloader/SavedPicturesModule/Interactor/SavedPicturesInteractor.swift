@@ -7,14 +7,9 @@
 
 import UIKit
 
-protocol SavedPicturesInteractorProtocol: AnyObject {
-    var presenter: SavedPicturesPresenterProtocol? { get set }
-    
-    func fetchSavedImages()
-}
-
 class SavedPicturesInteractor: SavedPicturesInteractorProtocol {
     weak var presenter: SavedPicturesPresenterProtocol?
+    private let cache = NSCache<NSString, UIImage>()
     
     func fetchSavedImages() {
         var images = [UIImage]()

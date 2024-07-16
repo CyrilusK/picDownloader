@@ -42,3 +42,46 @@ protocol DownloaderConfiguratorProtocol {
     static func configure() -> UIViewController
 }
 
+protocol SavedPicturesInteractorProtocol: AnyObject {
+    var presenter: SavedPicturesPresenterProtocol? { get set }
+    
+    func fetchSavedImages()
+}
+
+protocol SavedPicturesPresenterProtocol: AnyObject {
+    var view: SavedPicturesViewProtocol? { get set }
+    var interactor: SavedPicturesInteractorProtocol? { get set }
+    var images: [UIImage] { get }
+    
+    var dataSource: UICollectionViewDataSource? { get }
+    var delegate: UICollectionViewDelegate? { get }
+    
+    func viewDidLoad()
+    func didLoadImages(_ images: [UIImage])
+    func getImage(at indexPath: IndexPath) -> UIImage
+}
+
+protocol SavedPicturesViewProtocol: AnyObject {
+    var presenter: SavedPicturesPresenterProtocol? { get set }
+    
+    func reloadData()
+}
+
+protocol TabbarViewProtocol: AnyObject {
+    var presenter: TabbarPresenterProtocol? { get set }
+    func setupTabs(viewControllers: [UIViewController])
+}
+
+protocol TabbarPresenterProtocol: AnyObject {
+    var view: TabbarViewProtocol? { get set }
+    var router: TabbarRouterProtocol? { get set }
+    func viewDidLoad()
+}
+
+protocol TabbarRouterProtocol: AnyObject {
+    func createTabs() -> [UIViewController]
+}
+
+protocol TabbarConfiguratorProtocol: AnyObject {
+    static func configure() -> UITabBarController
+}

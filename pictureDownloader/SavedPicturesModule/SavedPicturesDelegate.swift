@@ -13,5 +13,4 @@ class SavedPicturesDelegate: NSObject, UICollectionViewDelegate {
     init(presenter: SavedPicturesPresenterProtocol) {
         self.presenter = presenter
     }
-    
 }

@@ -24,6 +24,7 @@
 		A5CB6D632C45842900AF032B /* SavedPicturesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D622C45842900AF032B /* SavedPicturesInteractor.swift */; };
 		A5CB6D662C4584D000AF032B /* SavedPicturesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D652C4584D000AF032B /* SavedPicturesConfigurator.swift */; };
 		A5CB6D682C465C7400AF032B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D672C465C7400AF032B /* Constants.swift */; };
+		A5CB6D6E2C4685DE00AF032B /* TabbarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D6D2C4685DE00AF032B /* TabbarConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A5CB6D622C45842900AF032B /* SavedPicturesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesInteractor.swift; sourceTree = "<group>"; };
 		A5CB6D652C4584D000AF032B /* SavedPicturesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesConfigurator.swift; sourceTree = "<group>"; };
 		A5CB6D672C465C7400AF032B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A5CB6D6D2C4685DE00AF032B /* TabbarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,6 @@
 				A5CB6D452C450F5A00AF032B /* View */,
 				A5CB6D442C450F4200AF032B /* Interactor */,
 				A5CB6D432C450F3900AF032B /* Presenter */,
-				A5CB6D412C450F1400AF032B /* Router */,
 				A5CB6D3E2C450E5A00AF032B /* Configurator */,
 			);
 			path = DownloaderModule;
@@ -123,13 +124,6 @@
 				A5CB6D3F2C450EE300AF032B /* DownloaderConfigurator.swift */,
 			);
 			path = Configurator;
-			sourceTree = "<group>";
-		};
-		A5CB6D412C450F1400AF032B /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		A5CB6D432C450F3900AF032B /* Presenter */ = {
@@ -160,8 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				A5CB6D502C45412100AF032B /* Configurator */,
-				A5CB6D4F2C453F8600AF032B /* Router */,
-				A5CB6D4E2C453F7B00AF032B /* Presenter */,
 				A5CB6D4D2C453F6B00AF032B /* View */,
 			);
 			path = TabBarModule;
@@ -175,23 +167,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A5CB6D4E2C453F7B00AF032B /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A5CB6D4F2C453F8600AF032B /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		A5CB6D502C45412100AF032B /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				A5CB6D6D2C4685DE00AF032B /* TabbarConfigurator.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -305,6 +284,7 @@
 				A5CB6D602C4580BA00AF032B /* SavedPicturesDelegate.swift in Sources */,
 				A5CB6D682C465C7400AF032B /* Constants.swift in Sources */,
 				A5CB6D522C45419700AF032B /* TabbarController.swift in Sources */,
+				A5CB6D6E2C4685DE00AF032B /* TabbarConfigurator.swift in Sources */,
 				A5CB6D402C450EE300AF032B /* DownloaderConfigurator.swift in Sources */,
 				A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */,
 				A5CB6D632C45842900AF032B /* SavedPicturesInteractor.swift in Sources */,

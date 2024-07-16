@@ -7,19 +7,6 @@
 
 import UIKit
 
-protocol SavedPicturesPresenterProtocol: AnyObject {
-    var view: SavedPicturesViewProtocol? { get set }
-    var interactor: SavedPicturesInteractorProtocol? { get set }
-    var images: [UIImage] { get }
-    
-    var dataSource: UICollectionViewDataSource? { get }
-    var delegate: UICollectionViewDelegate? { get }
-    
-    func viewDidLoad()
-    func didLoadImages(_ images: [UIImage])
-    func getImage(at indexPath: IndexPath) -> UIImage
-}
-
 class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
     weak var view: SavedPicturesViewProtocol?
     var interactor: SavedPicturesInteractorProtocol?

@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol SavedPicturesViewProtocol: AnyObject {
-    var presenter: SavedPicturesPresenterProtocol? { get set }
-    
-    func reloadData()
-}
-
 class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
     var presenter: SavedPicturesPresenterProtocol?
     

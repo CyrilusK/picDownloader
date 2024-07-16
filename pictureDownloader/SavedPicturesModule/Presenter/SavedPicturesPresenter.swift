@@ -10,6 +10,7 @@ import UIKit
 class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
     weak var view: SavedPicturesViewProtocol?
     var interactor: SavedPicturesInteractorProtocol?
+    //var downloadPresenter = DownloaderPresenter()
     
     var images = [UIImage]()
     
@@ -19,6 +20,7 @@ class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
     init() {
         self.dataSource = SavedPicturesDataSource(presenter: self)
         self.delegate = SavedPicturesDelegate(presenter: self)
+        //downloadPresenter.moduleOutput = self
     }
     
     func viewDidLoad() {
@@ -35,7 +37,7 @@ class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
     }
 }
 
-extension SavedPicturesPresenter: DownloaderDelegate {
+extension SavedPicturesPresenter: DownloaderModuleOutput {
     func didSaveImage() {
         print("didSaveImage called")
         interactor?.fetchSavedImages()

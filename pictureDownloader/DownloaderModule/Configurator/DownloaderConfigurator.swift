@@ -13,6 +13,9 @@ class DownloaderConfigurator: DownloaderConfiguratorProtocol {
         let presenter = DownloaderPresenter()
         let interactor = DownloaderInteractor()
         
+        let savedPicturesPresenter = SavedPicturesPresenter()
+        presenter.moduleOutput = savedPicturesPresenter
+        
         view.presenter = presenter
         presenter.view = view
         presenter.interactor = interactor

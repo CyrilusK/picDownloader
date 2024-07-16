@@ -19,15 +19,15 @@ class TabbarController: UITabBarController {
      }
 
      private func setupTabs() {
-         let imageVC = DownloaderConfigurator.configure()
-         let imageBarItem = UITabBarItem()
-         imageBarItem.image = UIImage(systemName: "plus.magnifyingglass")
-         imageVC.tabBarItem =  imageBarItem
-
          let gridSavedVC = SavedPicturesConfigurator.configure()
          let gridSavedBarItem = UITabBarItem()
          gridSavedBarItem.image = UIImage(systemName: "square.grid.3x3.fill")
          gridSavedVC.tabBarItem =  gridSavedBarItem
+         
+         let imageVC = DownloaderConfigurator.configure()
+         let imageBarItem = UITabBarItem()
+         imageBarItem.image = UIImage(systemName: "plus.magnifyingglass")
+         imageVC.tabBarItem =  imageBarItem
 
          viewControllers = [
              imageVC,

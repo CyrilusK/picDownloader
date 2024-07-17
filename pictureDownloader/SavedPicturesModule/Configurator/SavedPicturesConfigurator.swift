@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SavedPicturesConfigurator {
+class SavedPicturesConfigurator: SavedPicturesConfiguratorProtocol {
     static func configure() -> UIViewController {
         let view = SavedPicturesViewController()
         let interactor = SavedPicturesInteractor()

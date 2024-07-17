@@ -10,7 +10,7 @@ import UIKit
 class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
     weak var view: SavedPicturesViewProtocol?
     var interactor: SavedPicturesInteractorProtocol?
-    //var downloadPresenter = DownloaderPresenter()
+    //private var downloadPresenter = DownloaderPresenter()
     
     var images = [UIImage]()
     

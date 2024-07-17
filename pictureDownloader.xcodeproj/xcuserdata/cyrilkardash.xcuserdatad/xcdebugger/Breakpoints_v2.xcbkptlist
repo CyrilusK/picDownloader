@@ -257,54 +257,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8ED57507-DB4B-4BC1-A2C2-B8A52F301A7A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "init()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8ED57507-DB4B-4BC1-A2C2-B8A52F301A7A - 1b62a8f3b7d730ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.SavedPicturesPresenter.init() -&gt; pictureDownloader.SavedPicturesPresenter"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/pictureDownloader/pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "324">
-               </Location>
-               <Location
-                  uuid = "8ED57507-DB4B-4BC1-A2C2-B8A52F301A7A - 1b62a8f3b7d730ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.SavedPicturesPresenter.init() -&gt; pictureDownloader.SavedPicturesPresenter"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/pictureDownloader/pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "340">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "57E78D48-FA96-4C8F-89C8-E1FC6F86A9FB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -378,6 +330,22 @@
                   offsetFromSymbolStart = "52">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94F4CD20-3A77-4730-AF72-7D3B13EC82BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "didFetchImage(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

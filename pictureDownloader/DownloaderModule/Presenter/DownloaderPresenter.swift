@@ -14,7 +14,7 @@ protocol DownloaderModuleOutput: AnyObject {
 class DownloaderPresenter: DownloaderPresenterProtocol {
     weak var view: DownloaderViewProtocol?
     var interactor: DownloaderInteractorProtocol?
-    weak var moduleOutput: DownloaderModuleOutput?
+    var moduleOutput: DownloaderModuleOutput?
     
     func didFetchImage(_ image: UIImage) {
         view?.displayImage(image)

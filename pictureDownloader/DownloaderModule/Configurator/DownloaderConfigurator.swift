@@ -8,12 +8,11 @@
 import UIKit
 
 class DownloaderConfigurator: DownloaderConfiguratorProtocol {
-    static func configure() -> UIViewController {
+    static func configure(savedPicturesPresenter: SavedPicturesPresenter) -> UIViewController {
         let view = DownloaderViewController()
         let presenter = DownloaderPresenter()
         let interactor = DownloaderInteractor()
         
-        let savedPicturesPresenter = SavedPicturesPresenter()
         presenter.moduleOutput = savedPicturesPresenter
         
         view.presenter = presenter

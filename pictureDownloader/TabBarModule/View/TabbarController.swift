@@ -8,8 +8,6 @@
 import UIKit
 
 class TabbarController: UITabBarController {
-     var presenter: DownloaderPresenterProtocol?
-
      override func viewDidLoad() {
          super.viewDidLoad()
          setupTabs()
@@ -19,15 +17,22 @@ class TabbarController: UITabBarController {
      }
 
      private func setupTabs() {
-         let gridSavedVC = SavedPicturesConfigurator.configure()
+         guard let gridSavedVC = SavedPicturesConfigurator.configure() as? SavedPicturesViewController else {
+             print("[DEBUG] - SavedPicturesViewController cannot be configured.")
+             return
+         }
          let gridSavedBarItem = UITabBarItem()
          gridSavedBarItem.image = UIImage(systemName: "square.grid.3x3.fill")
-         gridSavedVC.tabBarItem =  gridSavedBarItem
+         gridSavedVC.tabBarItem = gridSavedBarItem
          
-         let imageVC = DownloaderConfigurator.configure()
+         guard let savedPicturesPresenter = gridSavedVC.presenter as? SavedPicturesPresenter else {
+             print("[DEBUG] - SavedPicturesPresenter cannot be cast.")
+             return
+         }
+         let imageVC = DownloaderConfigurator.configure(savedPicturesPresenter: savedPicturesPresenter)
          let imageBarItem = UITabBarItem()
          imageBarItem.image = UIImage(systemName: "plus.magnifyingglass")
-         imageVC.tabBarItem =  imageBarItem
+         imageVC.tabBarItem = imageBarItem
 
          viewControllers = [
              imageVC,

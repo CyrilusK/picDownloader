@@ -41,3 +41,7 @@ protocol DownloaderRouterProtocol {
 protocol DownloaderConfiguratorProtocol {
     static func configure(savedPicturesPresenter: SavedPicturesPresenter) -> UIViewController
 }
+
+protocol DownloaderModuleOutput: AnyObject {
+    func didSaveImage()
+}

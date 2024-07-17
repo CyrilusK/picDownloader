@@ -7,14 +7,10 @@
 
 import UIKit
 
-protocol DownloaderModuleOutput: AnyObject {
-    func didSaveImage()
-}
-
 class DownloaderPresenter: DownloaderPresenterProtocol {
     weak var view: DownloaderViewProtocol?
     var interactor: DownloaderInteractorProtocol?
-    var moduleOutput: DownloaderModuleOutput?
+    weak var moduleOutput: DownloaderModuleOutput?
     
     func didFetchImage(_ image: UIImage) {
         view?.displayImage(image)

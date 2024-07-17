@@ -37,9 +37,14 @@ class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
         gridCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         view.backgroundColor = .systemGroupedBackground
+        gridCollectionView.backgroundColor = .systemGroupedBackground
     }
     
     func reloadData() {
-        gridCollectionView.reloadData()
+        guard let collectionView = gridCollectionView else {
+            viewDidLoad()
+            return
+        }
+        collectionView.reloadData()
     }
 }

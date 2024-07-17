@@ -170,8 +170,8 @@
             filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "didFetchImage(_:)"
             landmarkType = "7">
             <Locations>
@@ -342,8 +342,8 @@
             filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "didFetchImage(_:)"
             landmarkType = "7">
          </BreakpointContent>

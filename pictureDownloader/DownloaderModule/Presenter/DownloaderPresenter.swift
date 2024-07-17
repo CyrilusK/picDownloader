@@ -13,19 +13,17 @@ class DownloaderPresenter: DownloaderPresenterProtocol {
     weak var moduleOutput: DownloaderModuleOutput?
     
     func didFetchImage(_ image: UIImage) {
-        view?.displayImage(image)
+        DispatchQueue.main.async {
+            self.view?.displayImage(image)
+        }
         moduleOutput?.didSaveImage()
     }
     
     func loadImage(_ url: String) {
-        DispatchQueue.main.async {
-            self.interactor?.fetchImage(url)
-        }
+        self.interactor?.fetchImage(url)
     }
     
     func didFailWithError(_ error: Error) {
-        DispatchQueue.main.async {
-            self.view?.displayError("Failed to load image: \(error.localizedDescription)")
-        }
+        self.view?.displayError("Failed to load image: \(error.localizedDescription)")
     }
 }

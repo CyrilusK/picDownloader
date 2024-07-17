@@ -14,8 +14,8 @@
             filePath = "pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "didSaveImage()"
             landmarkType = "7">
             <Locations>
@@ -92,8 +92,8 @@
             filePath = "pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "didSaveImage()"
             landmarkType = "7">
             <Locations>
@@ -170,8 +170,8 @@
             filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "didFetchImage(_:)"
             landmarkType = "7">
             <Locations>
@@ -248,88 +248,10 @@
             filePath = "pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "didSaveImage()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "57E78D48-FA96-4C8F-89C8-E1FC6F86A9FB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "didSaveImage()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "57E78D48-FA96-4C8F-89C8-E1FC6F86A9FB - 4be8439f398e8f2e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.SavedPicturesPresenter.didSaveImage() -&gt; ()"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/pictureDownloader/pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "57E78D48-FA96-4C8F-89C8-E1FC6F86A9FB - 4be8439f398e8f6c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.SavedPicturesPresenter.didSaveImage() -&gt; ()"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/pictureDownloader/pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "320">
-               </Location>
-               <Location
-                  uuid = "57E78D48-FA96-4C8F-89C8-E1FC6F86A9FB - 4be8439f398e8f6c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.SavedPicturesPresenter.didSaveImage() -&gt; ()"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/pictureDownloader/pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "57E78D48-FA96-4C8F-89C8-E1FC6F86A9FB - 4be8439f398e8c8d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.SavedPicturesPresenter.didSaveImage() -&gt; ()"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/pictureDownloader/pictureDownloader/SavedPicturesModule/Presenter/SavedPicturesPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -342,8 +264,8 @@
             filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "didFetchImage(_:)"
             landmarkType = "7">
          </BreakpointContent>

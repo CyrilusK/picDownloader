@@ -29,7 +29,9 @@ class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
     
     func didLoadImages(_ images: [UIImage]) {
         self.images = images
-        view?.reloadData()
+        DispatchQueue.main.async {
+            self.view?.reloadData()
+        }
     }
     
     func getImage(at indexPath: IndexPath) -> UIImage {
@@ -39,7 +41,6 @@ class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
 
 extension SavedPicturesPresenter: DownloaderModuleOutput {
     func didSaveImage() {
-        print("didSaveImage called")
         interactor?.fetchSavedImages()
     }
 }

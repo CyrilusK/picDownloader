@@ -81,18 +81,13 @@ class DownloaderViewController: UIViewController, DownloaderViewProtocol {
     }
     
     func displayImage(_ image: UIImage) {
-        DispatchQueue.main.async {
-            self.imageViewFromUrl.image = image
-        }
-        
+        self.imageViewFromUrl.image = image
     }
     
     func displayError(_ message: String) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

@@ -42,13 +42,9 @@ class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
     
     func reloadData() {
         guard let collectionView = gridCollectionView else {
-            DispatchQueue.main.async {
-                self.viewDidLoad()
-            }
+            self.viewDidLoad()
             return
         }
-        DispatchQueue.main.async {
-            collectionView.reloadData()
-        }
+        collectionView.reloadData()
     }
 }

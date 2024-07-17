@@ -28,5 +28,4 @@ class SavedPicturesDataSource: NSObject, UICollectionViewDataSource {
         imageView.layer.masksToBounds = true
         return cell
     }
-    
 }

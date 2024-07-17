@@ -8,6 +8,8 @@
 import UIKit
 
 class TabbarController: UITabBarController {
+    private let imageManager = ImageManager()
+    
      override func viewDidLoad() {
          super.viewDidLoad()
          setupTabs()
@@ -17,7 +19,7 @@ class TabbarController: UITabBarController {
      }
 
      private func setupTabs() {
-         guard let gridSavedVC = SavedPicturesConfigurator.configure() as? SavedPicturesViewController else {
+         guard let gridSavedVC = SavedPicturesConfigurator.configure(imageManager: imageManager) as? SavedPicturesViewController else {
              print("[DEBUG] - SavedPicturesViewController cannot be configured.")
              return
          }
@@ -29,7 +31,7 @@ class TabbarController: UITabBarController {
              print("[DEBUG] - SavedPicturesPresenter cannot be cast.")
              return
          }
-         let imageVC = DownloaderConfigurator.configure(savedPicturesPresenter: savedPicturesPresenter)
+         let imageVC = DownloaderConfigurator.configure(savedPicturesPresenter: savedPicturesPresenter, imageManager: imageManager)
          let imageBarItem = UITabBarItem()
          imageBarItem.image = UIImage(systemName: "plus.magnifyingglass")
          imageVC.tabBarItem = imageBarItem

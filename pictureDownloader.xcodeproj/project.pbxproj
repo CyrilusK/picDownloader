@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5BCE31B2C481CEB004BE4A8 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE31A2C481CEB004BE4A8 /* ImageManager.swift */; };
 		A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D262C45075A00AF032B /* AppDelegate.swift */; };
 		A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D282C45075A00AF032B /* SceneDelegate.swift */; };
 		A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5BCE31A2C481CEB004BE4A8 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		A5CB6D232C45075A00AF032B /* pictureDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictureDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB6D262C45075A00AF032B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D282C45075A00AF032B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5BCE31C2C4822BF004BE4A8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE31A2C481CEB004BE4A8 /* ImageManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		A5CB6D1A2C45075A00AF032B = {
 			isa = PBXGroup;
 			children = (
@@ -84,15 +94,16 @@
 		A5CB6D252C45075A00AF032B /* pictureDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				A5BCE31C2C4822BF004BE4A8 /* Manager */,
 				A5CB6D4C2C453F5B00AF032B /* TabBarModule */,
 				A5CB6D3D2C450D2300AF032B /* SavedPicturesModule */,
 				A5CB6D3A2C450CEA00AF032B /* DownloaderModule */,
 				A5CB6D262C45075A00AF032B /* AppDelegate.swift */,
 				A5CB6D282C45075A00AF032B /* SceneDelegate.swift */,
+				A5CB6D672C465C7400AF032B /* Constants.swift */,
 				A5CB6D2F2C45075B00AF032B /* Assets.xcassets */,
 				A5CB6D312C45075B00AF032B /* LaunchScreen.storyboard */,
 				A5CB6D342C45075B00AF032B /* Info.plist */,
-				A5CB6D672C465C7400AF032B /* Constants.swift */,
 			);
 			path = pictureDownloader;
 			sourceTree = "<group>";
@@ -285,6 +296,7 @@
 			files = (
 				A5CB6D472C4517C100AF032B /* TabbarProtocols.swift in Sources */,
 				A5CB6D662C4584D000AF032B /* SavedPicturesConfigurator.swift in Sources */,
+				A5BCE31B2C481CEB004BE4A8 /* ImageManager.swift in Sources */,
 				A5CB6D722C47B19C00AF032B /* DownloaderProtocols.swift in Sources */,
 				A5CB6D5C2C457DE700AF032B /* SavedPicturesPresenter.swift in Sources */,
 				A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */,

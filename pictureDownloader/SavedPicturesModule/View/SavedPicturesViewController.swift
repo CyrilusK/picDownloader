@@ -10,7 +10,13 @@ import UIKit
 class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
     var presenter: SavedPicturesPresenterProtocol?
     
-    private var gridCollectionView: UICollectionView!
+    private var gridCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 20, height: 250)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemGroupedBackground
+        return collectionView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +25,6 @@ class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
     }
     
     private func setupCollectionView() {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: 250)
-        gridCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.addSubview(gridCollectionView)
         gridCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -37,14 +40,9 @@ class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
         gridCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         view.backgroundColor = .systemGroupedBackground
-        gridCollectionView.backgroundColor = .systemGroupedBackground
     }
     
     func reloadData() {
-        guard let collectionView = gridCollectionView else {
-            self.viewDidLoad()
-            return
-        }
-        collectionView.reloadData()
+        gridCollectionView.reloadData()
     }
 }

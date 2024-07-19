@@ -1,19 +1,13 @@
 //
-//  ImageManager.swift
+//  ImageStorage.swift
 //  pictureDownloader
 //
-//  Created by Cyril Kardash on 17.07.2024.
+//  Created by Cyril Kardash on 19.07.2024.
 //
 
 import UIKit
 
-protocol ImageManagerProtocol {
-    func saveImage(_ image: UIImage, withName name: String)
-    func fetchSavedImages() -> [UIImage]
-    func fetchImage(from url: String, completion: @escaping (Result<UIImage, Error>) -> Void)
-}
-
-class ImageManager: ImageManagerProtocol {
+class ImageStorage: ImageStorageProtocol {
     
     private func documentsDirUrl() -> URL? {
         try? FileManager.default.url(for: .downloadsDirectory,
@@ -51,7 +45,7 @@ class ImageManager: ImageManagerProtocol {
         }
     }
     
-    func fetchSavedImages() -> [UIImage] {
+    func loadSavedImages() -> [UIImage] {
         var images = [UIImage]()
         
         guard let url = documentsDirUrl() else {
@@ -74,37 +68,5 @@ class ImageManager: ImageManagerProtocol {
             }
         }
         return images
-    }
-    
-    func fetchImage(from url: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
-        guard let url = URL(string: url) else {
-            completion(.failure(NSError(domain: "App", code: 500, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
-            return
-        }
-        
-        guard let scheme = url.scheme, ["https"].contains(scheme.lowercased()) else {
-            let errorMessage = "URL invalid or URL must start with 'https://': \(url)"
-            completion(.failure(NSError(domain: "App", code: 500, userInfo: [NSLocalizedDescriptionKey: errorMessage])))
-            return
-        }
-        
-        print("[DEBUG] - Start fetching")
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            guard let data = data, let image = UIImage(data: data) else {
-                completion(.failure(NSError(domain: "App", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to decode image data"])))
-                return
-            }
-            
-            let imageName = UUID().uuidString + ".png"
-            self?.saveImage(image, withName: imageName)
-            
-            completion(.success(image))
-        }
-        task.resume()
     }
 }

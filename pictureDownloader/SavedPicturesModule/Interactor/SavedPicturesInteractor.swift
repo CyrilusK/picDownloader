@@ -9,14 +9,14 @@ import UIKit
 
 class SavedPicturesInteractor: SavedPicturesInteractorProtocol {
     weak var presenter: SavedPicturesPresenterProtocol?
-    private let imageManager: ImageManagerProtocol
+    private let imageStorage: ImageStorageProtocol
     
-    init(imageManager: ImageManagerProtocol) {
-        self.imageManager = imageManager
+    init(imageStorage: ImageStorageProtocol) {
+        self.imageStorage = imageStorage
     }
     
     func fetchSavedImages() {
-        let images = imageManager.fetchSavedImages()
+        let images = imageStorage.loadSavedImages()
         presenter?.didLoadImages(images)
     }
 }

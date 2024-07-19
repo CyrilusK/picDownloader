@@ -9,17 +9,21 @@ import UIKit
 
 class DownloaderInteractor: DownloaderInteractorProtocol {
     weak var presenter: DownloaderPresenterProtocol?
-    private let imageManager: ImageManagerProtocol
+    private let imageDownloader: ImageDownloaderProtocol
+    private let imageStorage: ImageStorageProtocol
     
-    init(imageManager: ImageManagerProtocol) {
-        self.imageManager = imageManager
+    init(imageDownloader: ImageDownloaderProtocol, imageStorage: ImageStorageProtocol) {
+        self.imageDownloader = imageDownloader
+        self.imageStorage = imageStorage
     }
     
     //https://cataas.com/cat
     func fetchImage(_ url: String) {
-        imageManager.fetchImage(from: url) { [weak self] result in
+        imageDownloader.fetchImage(from: url) { [weak self] result in
             switch result {
             case .success(let image):
+                let imageName = UUID().uuidString + ".png"
+                self?.imageStorage.saveImage(image, withName: imageName)
                 self?.presenter?.didFetchImage(image)
             case .failure(let error):
                 self?.presenter?.didFailWithError(error)

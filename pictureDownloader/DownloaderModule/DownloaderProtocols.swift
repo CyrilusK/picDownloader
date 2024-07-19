@@ -19,7 +19,6 @@ protocol DownloaderPresenterProtocol: AnyObject {
     /// - Parameters:
     var view: DownloaderViewProtocol? { get set }
     var interactor: DownloaderInteractorProtocol? { get set }
-    var moduleOutput: DownloaderModuleOutput? { get set }
     
     func loadImage(_ url: String)
     func didFetchImage(_ image: UIImage)
@@ -39,9 +38,5 @@ protocol DownloaderRouterProtocol {
 }
 
 protocol DownloaderConfiguratorProtocol {
-    static func configure(savedPicturesPresenter: SavedPicturesPresenter, imageManager: ImageManagerProtocol) -> UIViewController
-}
-
-protocol DownloaderModuleOutput: AnyObject {
-    func didSaveImage()
+    static func configure(imageDownloader: ImageDownloaderProtocol, imageStorage: ImageStorageProtocol) -> UIViewController
 }

@@ -10,13 +10,11 @@ import UIKit
 class DownloaderPresenter: DownloaderPresenterProtocol {
     weak var view: DownloaderViewProtocol?
     var interactor: DownloaderInteractorProtocol?
-    weak var moduleOutput: DownloaderModuleOutput?
     
     func didFetchImage(_ image: UIImage) {
         DispatchQueue.main.async {
             self.view?.displayImage(image)
         }
-        moduleOutput?.didSaveImage()
     }
     
     func loadImage(_ url: String) {

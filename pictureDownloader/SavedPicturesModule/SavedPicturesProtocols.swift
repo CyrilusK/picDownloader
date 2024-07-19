@@ -33,5 +33,5 @@ protocol SavedPicturesViewProtocol: AnyObject {
 }
 
 protocol SavedPicturesConfiguratorProtocol {
-    static func configure(imageManager: ImageManagerProtocol) -> UIViewController
+    static func configure(imageStorage: ImageStorageProtocol) -> UIViewController
 }

@@ -21,6 +21,11 @@ class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        //presenter?.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter?.viewDidLoad()
     }
     

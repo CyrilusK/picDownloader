@@ -23,6 +23,11 @@ final class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
     
     func viewDidLoad() {
         interactor?.fetchSavedImages()
+        view?.setupCollectionView()
+    }
+    
+    func viewWillAppear() {
+        interactor?.fetchSavedImages()
     }
     
     func didLoadImages(_ images: [UIImage]) {

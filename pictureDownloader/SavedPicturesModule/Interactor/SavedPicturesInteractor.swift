@@ -8,7 +8,7 @@
 import UIKit
 
 final class SavedPicturesInteractor: SavedPicturesInteractorProtocol {
-    weak var presenter: SavedPicturesPresenterProtocol?
+    weak var output: SavedPicturesPresenterProtocol?
     private let imageStorage: ImageStorageProtocol
     
     init(imageStorage: ImageStorageProtocol) {
@@ -17,6 +17,6 @@ final class SavedPicturesInteractor: SavedPicturesInteractorProtocol {
     
     func fetchSavedImages() {
         let images = imageStorage.loadSavedImages()
-        presenter?.didLoadImages(images)
+        output?.didLoadImages(images)
     }
 }

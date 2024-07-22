@@ -13,10 +13,12 @@ final class DownloaderConfigurator: DownloaderConfiguratorProtocol {
         let presenter = DownloaderPresenter()
         let interactor = DownloaderInteractor(imageDownloader: imageDownloader, imageStorage: imageStorage)
         
-        view.presenter = presenter
+        view.output = presenter
         presenter.view = view
         presenter.interactor = interactor
-        interactor.presenter = presenter
+        interactor.output = presenter
+        
+        view.urlTextField.delegate = presenter.delegate
         
         return view
     }

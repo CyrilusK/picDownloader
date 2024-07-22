@@ -8,9 +8,6 @@
 import UIKit
 
 final class TabbarController: UITabBarController, TabbarViewProtocol {
-    private let imageDownloader = ImageDownloader()
-    private let imageStorage = ImageStorage()
-    
      override func viewDidLoad() {
          super.viewDidLoad()
          setupTabs()
@@ -20,7 +17,7 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
      }
 
     func setupTabs() {
-         guard let gridSavedVC = SavedPicturesConfigurator().configure(imageStorage: imageStorage) as? SavedPicturesViewController else {
+         guard let gridSavedVC = SavedPicturesConfigurator().configure(imageStorage: ImageStorage()) as? SavedPicturesViewController else {
              print("[DEBUG] - SavedPicturesViewController cannot be configured.")
              return
          }
@@ -28,7 +25,7 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
          gridSavedBarItem.image = UIImage(systemName: "square.grid.3x3.fill")
          gridSavedVC.tabBarItem = gridSavedBarItem
          
-         let imageVC = DownloaderConfigurator().configure(imageDownloader: imageDownloader, imageStorage: imageStorage)
+         let imageVC = DownloaderConfigurator().configure(imageDownloader: ImageDownloader(), imageStorage: ImageStorage())
          let imageBarItem = UITabBarItem()
          imageBarItem.image = UIImage(systemName: "plus.magnifyingglass")
          imageVC.tabBarItem = imageBarItem

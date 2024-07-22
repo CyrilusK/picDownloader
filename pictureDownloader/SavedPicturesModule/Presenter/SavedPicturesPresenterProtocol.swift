@@ -14,6 +14,7 @@ protocol SavedPicturesPresenterProtocol: AnyObject {
     var delegate: UICollectionViewDelegate? { get }
     
     func viewDidLoad()
+    func viewWillAppear()
     func didLoadImages(_ images: [UIImage])
     func getImage(at indexPath: IndexPath) -> UIImage
 }

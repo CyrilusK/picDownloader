@@ -8,7 +8,7 @@
 import UIKit
 
 final class DownloaderInteractor: DownloaderInteractorProtocol {
-    weak var presenter: DownloaderPresenterProtocol?
+    weak var output: DownloaderOutputProtocol?
     private let imageDownloader: ImageDownloaderProtocol
     private let imageStorage: ImageStorageProtocol
     
@@ -24,9 +24,9 @@ final class DownloaderInteractor: DownloaderInteractorProtocol {
             case .success(let image):
                 let imageName = UUID().uuidString + ".png"
                 self?.imageStorage.saveImage(image, withName: imageName)
-                self?.presenter?.didFetchImage(image)
+                self?.output?.didFetchImage(image)
             case .failure(let error):
-                self?.presenter?.didFailWithError(error)
+                self?.output?.didFailWithError(error)
             }
         }
     }

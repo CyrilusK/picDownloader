@@ -20,6 +20,7 @@
 		A5BCE3332C4E8F78004BE4A8 /* DownloaderPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3322C4E8F78004BE4A8 /* DownloaderPresenterProtocol.swift */; };
 		A5BCE3352C4E8FBF004BE4A8 /* DownloaderInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3342C4E8FBF004BE4A8 /* DownloaderInteractorProtocol.swift */; };
 		A5BCE3372C4E8FFA004BE4A8 /* DownloaderConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3362C4E8FFA004BE4A8 /* DownloaderConfiguratorProtocol.swift */; };
+		A5BCE3392C4EB104004BE4A8 /* DownloaderTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3382C4EB104004BE4A8 /* DownloaderTextFieldDelegate.swift */; };
 		A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D262C45075A00AF032B /* AppDelegate.swift */; };
 		A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D282C45075A00AF032B /* SceneDelegate.swift */; };
 		A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */; };
@@ -53,6 +54,7 @@
 		A5BCE3322C4E8F78004BE4A8 /* DownloaderPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderPresenterProtocol.swift; sourceTree = "<group>"; };
 		A5BCE3342C4E8FBF004BE4A8 /* DownloaderInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderInteractorProtocol.swift; sourceTree = "<group>"; };
 		A5BCE3362C4E8FFA004BE4A8 /* DownloaderConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		A5BCE3382C4EB104004BE4A8 /* DownloaderTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderTextFieldDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D232C45075A00AF032B /* pictureDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictureDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB6D262C45075A00AF032B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D282C45075A00AF032B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		A5CB6D3A2C450CEA00AF032B /* DownloaderModule */ = {
 			isa = PBXGroup;
 			children = (
+				A5BCE3382C4EB104004BE4A8 /* DownloaderTextFieldDelegate.swift */,
 				A5CB6D452C450F5A00AF032B /* View */,
 				A5CB6D442C450F4200AF032B /* Interactor */,
 				A5CB6D432C450F3900AF032B /* Presenter */,
@@ -343,6 +346,7 @@
 				A5CB6D5E2C45802E00AF032B /* SavedPicturesDataSource.swift in Sources */,
 				A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */,
 				A5BCE3372C4E8FFA004BE4A8 /* DownloaderConfiguratorProtocol.swift in Sources */,
+				A5BCE3392C4EB104004BE4A8 /* DownloaderTextFieldDelegate.swift in Sources */,
 				A5BCE3272C4E8C3F004BE4A8 /* SavedPicturesViewProtocol.swift in Sources */,
 				A5BCE3222C4AAD15004BE4A8 /* ManagerProtocols.swift in Sources */,
 				A5BCE3292C4E8CA4004BE4A8 /* SavedPicturesPresenterProtocol.swift in Sources */,

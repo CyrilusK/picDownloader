@@ -7,9 +7,19 @@
 
 import UIKit
 
-final class DownloaderPresenter: DownloaderPresenterProtocol {
+final class DownloaderPresenter: DownloaderOutputProtocol {
     weak var view: DownloaderViewProtocol?
     var interactor: DownloaderInteractorProtocol?
+    
+    var delegate: UITextFieldDelegate?
+    
+    init() {
+        self.delegate = DownloaderTextFieldDelegate(presenter: self)
+    }
+    
+    func viewDidLoad() {
+        view?.setupView()
+    }
     
     func didFetchImage(_ image: UIImage) {
         DispatchQueue.main.async {

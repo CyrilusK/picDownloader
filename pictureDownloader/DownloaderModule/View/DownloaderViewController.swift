@@ -8,18 +8,15 @@
 import UIKit
 
 final class DownloaderViewController: UIViewController, DownloaderViewProtocol {
-    var presenter: DownloaderPresenterProtocol?
+    var output: DownloaderOutputProtocol?
     
-    private let urlTextField = UITextField()
+    let urlTextField = UITextField()
     private let imageViewFromUrl = UIImageView()
     private let searchButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        setupUrlTextField()
-        setupImageView()
-        setupButton()
+        output?.viewDidLoad()
     }
     
     private func setupButton() {
@@ -68,16 +65,16 @@ final class DownloaderViewController: UIViewController, DownloaderViewProtocol {
         ])
     }
     
-    private func setupView() {
+    func setupView() {
         view.backgroundColor = .systemGroupedBackground
+        setupUrlTextField()
+        setupImageView()
+        setupButton()
     }
     
     @objc
     private func didTapButton() {
-        if let url = urlTextField.text {
-            presenter?.loadImage(url)
-            urlTextField.text = ""
-        }
+        urlTextField.endEditing(true)
     }
     
     func displayImage(_ image: UIImage) {
@@ -91,27 +88,4 @@ final class DownloaderViewController: UIViewController, DownloaderViewProtocol {
     }
 }
 
-extension DownloaderViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.endEditing(true)
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let url = textField.text {
-            presenter?.loadImage(url)
-        }
-        textField.text = ""
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != "" {
-            return true
-        }
-        else {
-            textField.placeholder = "Введите url"
-            return false
-        }
-    }
-}
 

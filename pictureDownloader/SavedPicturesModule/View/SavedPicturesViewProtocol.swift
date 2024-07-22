@@ -8,5 +8,6 @@
 import UIKit
 
 protocol SavedPicturesViewProtocol: AnyObject {
+    func setupCollectionView()
     func reloadData()
 }

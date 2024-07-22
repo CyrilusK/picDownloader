@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
+final class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
     var presenter: SavedPicturesPresenterProtocol?
     
     private var gridCollectionView: UICollectionView = {

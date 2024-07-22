@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DownloaderViewController: UIViewController, DownloaderViewProtocol {
+final class DownloaderViewController: UIViewController, DownloaderViewProtocol {
     var presenter: DownloaderPresenterProtocol?
     
     private let urlTextField = UITextField()

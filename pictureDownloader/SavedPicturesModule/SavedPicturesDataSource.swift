@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SavedPicturesDataSource: NSObject, UICollectionViewDataSource {
+final class SavedPicturesDataSource: NSObject, UICollectionViewDataSource {
     private let presenter: SavedPicturesPresenterProtocol
     
     init(presenter: SavedPicturesPresenterProtocol) {

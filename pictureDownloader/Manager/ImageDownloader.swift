@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageDownloader: ImageDownloaderProtocol {
+final class ImageDownloader: ImageDownloaderProtocol {
     func fetchImage(from url: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(NSError(domain: "App", code: 500, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))

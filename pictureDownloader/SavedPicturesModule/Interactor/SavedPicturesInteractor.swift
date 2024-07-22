@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SavedPicturesInteractor: SavedPicturesInteractorProtocol {
+final class SavedPicturesInteractor: SavedPicturesInteractorProtocol {
     weak var presenter: SavedPicturesPresenterProtocol?
     private let imageStorage: ImageStorageProtocol
     

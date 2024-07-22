@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TabbarConfigurator: TabbarConfiguratorProtocol {
-    static func configure() -> UITabBarController {
+final class TabbarConfigurator: TabbarConfiguratorProtocol {
+    func configure() -> UITabBarController {
         let view = TabbarController()
         return view
     }

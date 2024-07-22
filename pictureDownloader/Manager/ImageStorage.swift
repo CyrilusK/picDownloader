@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageStorage: ImageStorageProtocol {
+final class ImageStorage: ImageStorageProtocol {
     
     private func documentsDirUrl() -> URL? {
         try? FileManager.default.url(for: .downloadsDirectory,

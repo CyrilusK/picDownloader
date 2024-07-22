@@ -7,8 +7,8 @@
 
 import UIKit
 
-class DownloaderConfigurator: DownloaderConfiguratorProtocol {
-    static func configure(imageDownloader: ImageDownloaderProtocol, imageStorage: ImageStorageProtocol) -> UIViewController {
+final class DownloaderConfigurator: DownloaderConfiguratorProtocol {
+    func configure(imageDownloader: ImageDownloaderProtocol, imageStorage: ImageStorageProtocol) -> UIViewController {
         let view = DownloaderViewController()
         let presenter = DownloaderPresenter()
         let interactor = DownloaderInteractor(imageDownloader: imageDownloader, imageStorage: imageStorage)

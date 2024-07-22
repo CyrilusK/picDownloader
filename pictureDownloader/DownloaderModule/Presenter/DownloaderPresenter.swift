@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DownloaderPresenter: DownloaderPresenterProtocol {
+final class DownloaderPresenter: DownloaderPresenterProtocol {
     weak var view: DownloaderViewProtocol?
     var interactor: DownloaderInteractorProtocol?
     

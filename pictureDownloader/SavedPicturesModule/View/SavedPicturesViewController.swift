@@ -7,14 +7,12 @@
 
 import UIKit
 
-final class SavedPicturesViewController: UIViewController, SavedPicturesViewProtocol {
-    var output: SavedPicturesPresenterProtocol?
+final class SavedPicturesViewController: UIViewController, SavedPicturesViewInputProtocol {
+    var output: SavedPicturesOutputProtocol?
     
     var gridCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 20, height: 250)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemGroupedBackground
         return collectionView
     }()
     
@@ -33,13 +31,14 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewProt
         gridCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            gridCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-            gridCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            gridCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            gridCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+            gridCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            gridCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            gridCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            gridCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
   
-        gridCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        gridCollectionView.register(SavedPictureCell.self, forCellWithReuseIdentifier: SavedPictureCell.reuseIdentifier)
+        gridCollectionView.backgroundColor = .systemGroupedBackground
         view.backgroundColor = .systemGroupedBackground
     }
     

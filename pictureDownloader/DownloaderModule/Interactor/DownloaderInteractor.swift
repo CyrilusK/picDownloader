@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DownloaderInteractor: DownloaderInteractorProtocol {
+final class DownloaderInteractor: DownloaderInteractorInputProtocol {
     weak var output: DownloaderOutputProtocol?
     private let imageDownloader: ImageDownloaderProtocol
     private let imageStorage: ImageStorageProtocol

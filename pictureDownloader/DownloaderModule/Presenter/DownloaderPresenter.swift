@@ -8,8 +8,8 @@
 import UIKit
 
 final class DownloaderPresenter: DownloaderOutputProtocol {
-    weak var view: DownloaderViewProtocol?
-    var interactor: DownloaderInteractorProtocol?
+    weak var view: DownloaderViewInputProtocol?
+    var interactor: DownloaderInteractorInputProtocol?
     
     var delegate: UITextFieldDelegate?
     
@@ -32,6 +32,8 @@ final class DownloaderPresenter: DownloaderOutputProtocol {
     }
     
     func didFailWithError(_ error: Error) {
-        self.view?.displayError("Failed to load image: \(error.localizedDescription)")
+        DispatchQueue.main.async {
+            self.view?.displayError("Failed to load image: \(error.localizedDescription)")
+        }
     }
 }

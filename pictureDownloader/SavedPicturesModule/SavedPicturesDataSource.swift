@@ -8,9 +8,9 @@
 import UIKit
 
 final class SavedPicturesDataSource: NSObject, UICollectionViewDataSource {
-    private let presenter: SavedPicturesPresenterProtocol
+    private let presenter: SavedPicturesOutputProtocol
     
-    init(presenter: SavedPicturesPresenterProtocol) {
+    init(presenter: SavedPicturesOutputProtocol) {
         self.presenter = presenter
     }
     
@@ -19,13 +19,11 @@ final class SavedPicturesDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        let imageView = UIImageView(image: presenter.getImage(at: indexPath))
-        cell.contentView.addSubview(imageView)
-        imageView.frame = cell.contentView.bounds
-        imageView.contentMode = .scaleToFill
-        imageView.layer.cornerRadius = 20
-        imageView.layer.masksToBounds = true
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SavedPictureCell.reuseIdentifier, for: indexPath) as? SavedPictureCell else {
+            fatalError("[DEBUG] - Failed to dequeue SavedPictureCell")
+        }
+        let image = presenter.getImage(at: indexPath)
+        cell.configure(with: image)
         return cell
     }
 }

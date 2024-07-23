@@ -36,5 +36,739 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D2F0CA3-CB3C-48E5-8F86-FDD5DA192172"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5D2F0CA3-CB3C-48E5-8F86-FDD5DA192172 - 10855c409ddf665e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  uuid = "5D2F0CA3-CB3C-48E5-8F86-FDD5DA192172 - 10855c409ddf665e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55AC54D9-E650-4457-8C51-6C4564B9B1A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14BA0770-3DF6-4F42-8206-875219D1027F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1720EE17-12B0-44AB-9B20-191B2FC88D1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "399EF99C-8AA0-4B42-90F1-A90873D7A180"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36959E89-A0CA-4FAE-A26D-2A2D91880E8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "523F7523-A502-4EB1-A337-A1B3F73706C7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "523F7523-A502-4EB1-A337-A1B3F73706C7 - 10855c409ddf6504"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "552">
+               </Location>
+               <Location
+                  uuid = "523F7523-A502-4EB1-A337-A1B3F73706C7 - 7629dd216dee5029"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEFAC59E-DDD6-471A-A613-351BFACFC233"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EE28015-685E-4A1D-AAF9-B4D94287A841"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4422A7E9-9F7F-4212-BF64-9F84800EED33"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4422A7E9-9F7F-4212-BF64-9F84800EED33 - 7629dd216dee50cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "4422A7E9-9F7F-4212-BF64-9F84800EED33 - 7629dd216dee50cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "4422A7E9-9F7F-4212-BF64-9F84800EED33 - 7629dd216dee50cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FF8E49A-96F1-4232-9C0A-0EC17A3C3B65"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9FF8E49A-96F1-4232-9C0A-0EC17A3C3B65 - 7629dd216dee50cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "9FF8E49A-96F1-4232-9C0A-0EC17A3C3B65 - 7629dd216dee50cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "9FF8E49A-96F1-4232-9C0A-0EC17A3C3B65 - 7629dd216dee50cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in pictureDownloader.ImageDownloader.fetchImage(from: Swift.String, completion: (Swift.Result&lt;__C.UIImage, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/Manager/ImageDownloader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35461929-225C-4556-99BE-FCA712273E12"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDA95B5F-DC70-40D7-B7C6-81A62BA75D21"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A1B26C9-76C0-4C1E-9B5B-C8906501D468"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94A82FF8-2668-4EB3-9032-55A788183AAA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/Manager/ImageDownloader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A7A90F5-905F-4BCD-A24C-529856A5BA3A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Interactor/DownloaderInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "fetchImage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0987475-09CC-4B0C-A023-B9384455AF22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Interactor/DownloaderInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "fetchImage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98CE6167-8827-453F-AE03-79F6EE68E4F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Interactor/DownloaderInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchImage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5A3F976-134E-4FA9-B0E4-3693F698F819"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Interactor/DownloaderInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "fetchImage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FA7BA29-9323-42E5-910C-9EE4986AD299"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Interactor/DownloaderInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "fetchImage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C0C1ED9-3844-49FE-A8B9-7D9F8EC242B7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Interactor/DownloaderInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchImage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "846ECDB6-C00A-4E63-85F6-FCEB71B6D98D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Interactor/DownloaderInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchImage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27B696EA-A812-499E-92E3-2C37568F4683"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "didFailWithError(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "27B696EA-A812-499E-92E3-2C37568F4683 - 2ecd7ac726be053a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureDownloader.DownloaderPresenter.didFailWithError(Swift.Error) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "27B696EA-A812-499E-92E3-2C37568F4683 - 2ecd7ac726be053a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureDownloader.DownloaderPresenter.didFailWithError(Swift.Error) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E559F43-F4AA-4A31-86D9-C90A4E596403"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "didFailWithError(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E559F43-F4AA-4A31-86D9-C90A4E596403 - 2ecd7ac726be053a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureDownloader.DownloaderPresenter.didFailWithError(Swift.Error) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "9E559F43-F4AA-4A31-86D9-C90A4E596403 - eadffc334bc649c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in pictureDownloader.DownloaderPresenter.didFailWithError(Swift.Error) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D83A93A-F078-4294-BC61-8D67E015E0AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "didFailWithError(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7D83A93A-F078-4294-BC61-8D67E015E0AB - 2ecd7ac726be05db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureDownloader.DownloaderPresenter.didFailWithError(Swift.Error) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "664">
+               </Location>
+               <Location
+                  uuid = "7D83A93A-F078-4294-BC61-8D67E015E0AB - 2ecd7ac726be059d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureDownloader.DownloaderPresenter.didFailWithError(Swift.Error) -&gt; ()"
+                  moduleName = "pictureDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "376">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44D430B1-2040-4BAA-9786-0ED3D139B520"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/View/DownloaderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "displayError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC6B0FCA-ADCF-4568-AB35-47E21887C372"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/View/DownloaderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "displayError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "906F1191-861A-4F61-BC7E-270CFE9437CF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/View/DownloaderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "displayError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AEDC3C7-A489-474F-BFF2-FD834BCBD138"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/View/DownloaderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "displayError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2119E09-6995-42F2-9C72-264CEB180921"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureDownloader/DownloaderModule/View/DownloaderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "displayError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

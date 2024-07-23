@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class SavedPicturesPresenter: SavedPicturesPresenterProtocol {
-    weak var view: SavedPicturesViewProtocol?
-    var interactor: SavedPicturesInteractorProtocol?
+final class SavedPicturesPresenter: SavedPicturesOutputProtocol {
+    weak var view: SavedPicturesViewInputProtocol?
+    var interactor: SavedPicturesInteractorInputProtocol?
     
     var images = [UIImage]()
     

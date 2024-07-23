@@ -8,6 +8,8 @@
 import UIKit
 
 protocol DownloaderOutputProtocol: AnyObject {
+    var delegate: UITextFieldDelegate? { get }
+    
     func viewDidLoad()
     func loadImage(_ url: String)
     func didFetchImage(_ image: UIImage)

@@ -14,4 +14,5 @@ protocol ImageDownloaderProtocol {
 protocol ImageStorageProtocol {
     func saveImage(_ image: UIImage, withName name: String)
     func loadSavedImages() -> [UIImage]
+    func getImage(withName name: String) -> UIImage?
 }

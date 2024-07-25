@@ -37,7 +37,7 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
             gridCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
   
-        gridCollectionView.register(SavedPictureCell.self, forCellWithReuseIdentifier: SavedPictureCell.reuseIdentifier)
+        gridCollectionView.register(SavedPictureCell.self, forCellWithReuseIdentifier: Constants.reuseIdentifier)
         gridCollectionView.backgroundColor = .systemGroupedBackground
         view.backgroundColor = .systemGroupedBackground
     }

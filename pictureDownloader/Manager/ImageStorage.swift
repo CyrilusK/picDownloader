@@ -8,6 +8,11 @@
 import UIKit
 
 final class ImageStorage: ImageStorageProtocol {
+    private let imageEncryptor: ImageEncryptor
+    
+    init(imageEncryptor: ImageEncryptor) {
+        self.imageEncryptor = imageEncryptor
+    }
     
     private func documentsDirUrl() -> URL? {
         try? FileManager.default.url(for: .downloadsDirectory,
@@ -21,7 +26,9 @@ final class ImageStorage: ImageStorageProtocol {
             print("[DEBUG] - failed to get documents dir url")
             return
         }
-        guard let data = image.pngData() else {
+        
+        guard let encryptedData = imageEncryptor.encrypt(image: image) else {
+            print("[DEBUG] - Failed to encrypt image")
             return
         }
         
@@ -37,7 +44,7 @@ final class ImageStorage: ImageStorageProtocol {
         let fileUrl = url.appendingPathComponent(name)
         
         do {
-            try data.write(to: fileUrl)
+            try encryptedData.write(to: fileUrl, options: .completeFileProtection)
             print("[DEBUG] - Image saved: \(fileUrl.path)")
         }
         catch {
@@ -61,12 +68,19 @@ final class ImageStorage: ImageStorageProtocol {
         
         for imagePath in imagePaths {
             let fileUrl = url.appendingPathComponent(imagePath)
-            if let image = UIImage(contentsOfFile: fileUrl.path) {
-                images.append(image)
-            } else {
+            do {
+                let encryptedData = try Data(contentsOf: fileUrl)
+                if let image = imageEncryptor.decrypt(encrypted: encryptedData) {
+                    images.append(image)
+                }
+                else {
+                    print("[DEBUG] - Error decrypting image at path: \(fileUrl.path)")
+                }
+            } catch {
                 print("[DEBUG] - Error loading image at path: \(fileUrl.path)")
             }
         }
         return images
     }
+    
 }

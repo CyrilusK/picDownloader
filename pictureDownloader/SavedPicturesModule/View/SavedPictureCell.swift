@@ -8,7 +8,6 @@
 import UIKit
 
 final class SavedPictureCell: UICollectionViewCell {
-    static let reuseIdentifier = "SavedPictureCell"
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()

@@ -9,4 +9,6 @@ import UIKit
 
 struct Constants {
     static let directoryName = "SavedImages"
+    static let reuseIdentifier = "SavedPictureCell"
+    static let keyName = "com.kkg.picDownloader"
 }

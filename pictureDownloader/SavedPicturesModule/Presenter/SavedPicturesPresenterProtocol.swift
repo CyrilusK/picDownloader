@@ -17,4 +17,5 @@ protocol SavedPicturesOutputProtocol: AnyObject {
     func viewWillAppear()
     func didLoadImages(_ images: [UIImage])
     func getImage(at indexPath: IndexPath) -> UIImage
+    func didSelectImage(at indexPath: IndexPath)
 }

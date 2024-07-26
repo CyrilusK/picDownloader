@@ -12,11 +12,14 @@ final class SavedPicturesConfigurator: SavedPicturesConfiguratorProtocol {
         let view = SavedPicturesViewController()
         let interactor = SavedPicturesInteractor(imageStorage: imageStorage)
         let presenter = SavedPicturesPresenter()
+        let router = SavedPicturesRouter()
         
         view.output = presenter
         presenter.view = view
         presenter.interactor = interactor
+        presenter.router = router
         interactor.output = presenter
+        router.entry = view
         
         view.gridCollectionView.dataSource = presenter.dataSource
         view.gridCollectionView.delegate = presenter.delegate

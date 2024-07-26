@@ -10,6 +10,7 @@ import UIKit
 final class SavedPicturesPresenter: SavedPicturesOutputProtocol {
     weak var view: SavedPicturesViewInputProtocol?
     var interactor: SavedPicturesInteractorInputProtocol?
+    var router: SavedPicturesRouterInputProtocol?
     
     var images = [UIImage]()
     
@@ -39,6 +40,11 @@ final class SavedPicturesPresenter: SavedPicturesOutputProtocol {
     
     func getImage(at indexPath: IndexPath) -> UIImage {
         return images[indexPath.row]
+    }
+    
+    func didSelectImage(at indexPath: IndexPath) {
+        let image = getImage(at: indexPath)
+        router?.presentImageDetail(image)
     }
 }
 

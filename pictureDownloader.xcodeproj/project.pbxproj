@@ -25,6 +25,15 @@
 		A5BCE33D2C52454E004BE4A8 /* ImageEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE33C2C52454E004BE4A8 /* ImageEncryptor.swift */; };
 		A5BCE33F2C5270CB004BE4A8 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE33E2C5270CB004BE4A8 /* KeychainHelper.swift */; };
 		A5BCE3412C52AA49004BE4A8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3402C52AA49004BE4A8 /* Extension.swift */; };
+		A5BCE3442C53A217004BE4A8 /* SavedPicturesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3432C53A217004BE4A8 /* SavedPicturesRouter.swift */; };
+		A5BCE34C2C53A396004BE4A8 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE34B2C53A396004BE4A8 /* ImageDetailViewController.swift */; };
+		A5BCE34E2C53A44B004BE4A8 /* ImageDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE34D2C53A44B004BE4A8 /* ImageDetailConfigurator.swift */; };
+		A5BCE3502C53A6F5004BE4A8 /* SavedPicturesRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE34F2C53A6F5004BE4A8 /* SavedPicturesRouterInputProtocol.swift */; };
+		A5BCE3522C53DB4F004BE4A8 /* ImageDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3512C53DB4F004BE4A8 /* ImageDetailPresenter.swift */; };
+		A5BCE3542C53DB9B004BE4A8 /* ImageDetailOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3532C53DB9B004BE4A8 /* ImageDetailOutputProtocol.swift */; };
+		A5BCE3562C53DF22004BE4A8 /* ImageDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3552C53DF22004BE4A8 /* ImageDetailRouter.swift */; };
+		A5BCE3582C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3572C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift */; };
+		A5BCE35A2C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3592C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift */; };
 		A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D262C45075A00AF032B /* AppDelegate.swift */; };
 		A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D282C45075A00AF032B /* SceneDelegate.swift */; };
 		A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */; };
@@ -63,6 +72,15 @@
 		A5BCE33C2C52454E004BE4A8 /* ImageEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEncryptor.swift; sourceTree = "<group>"; };
 		A5BCE33E2C5270CB004BE4A8 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		A5BCE3402C52AA49004BE4A8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A5BCE3432C53A217004BE4A8 /* SavedPicturesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesRouter.swift; sourceTree = "<group>"; };
+		A5BCE34B2C53A396004BE4A8 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		A5BCE34D2C53A44B004BE4A8 /* ImageDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailConfigurator.swift; sourceTree = "<group>"; };
+		A5BCE34F2C53A6F5004BE4A8 /* SavedPicturesRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesRouterInputProtocol.swift; sourceTree = "<group>"; };
+		A5BCE3512C53DB4F004BE4A8 /* ImageDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailPresenter.swift; sourceTree = "<group>"; };
+		A5BCE3532C53DB9B004BE4A8 /* ImageDetailOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailOutputProtocol.swift; sourceTree = "<group>"; };
+		A5BCE3552C53DF22004BE4A8 /* ImageDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailRouter.swift; sourceTree = "<group>"; };
+		A5BCE3572C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailRouterInputProtocol.swift; sourceTree = "<group>"; };
+		A5BCE3592C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewInputProtocol.swift; sourceTree = "<group>"; };
 		A5CB6D232C45075A00AF032B /* pictureDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictureDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB6D262C45075A00AF032B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D282C45075A00AF032B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +125,61 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		A5BCE3422C53A1D6004BE4A8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3432C53A217004BE4A8 /* SavedPicturesRouter.swift */,
+				A5BCE34F2C53A6F5004BE4A8 /* SavedPicturesRouterInputProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A5BCE3452C53A2AD004BE4A8 /* ImageDetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE34A2C53A327004BE4A8 /* Router */,
+				A5BCE3492C53A31B004BE4A8 /* View */,
+				A5BCE3482C53A305004BE4A8 /* Presenter */,
+				A5BCE3462C53A2E3004BE4A8 /* Configurator */,
+			);
+			path = ImageDetailModule;
+			sourceTree = "<group>";
+		};
+		A5BCE3462C53A2E3004BE4A8 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE34D2C53A44B004BE4A8 /* ImageDetailConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A5BCE3482C53A305004BE4A8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3512C53DB4F004BE4A8 /* ImageDetailPresenter.swift */,
+				A5BCE3532C53DB9B004BE4A8 /* ImageDetailOutputProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A5BCE3492C53A31B004BE4A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE34B2C53A396004BE4A8 /* ImageDetailViewController.swift */,
+				A5BCE3592C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5BCE34A2C53A327004BE4A8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3552C53DF22004BE4A8 /* ImageDetailRouter.swift */,
+				A5BCE3572C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		A5CB6D1A2C45075A00AF032B = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +201,7 @@
 			children = (
 				A5BCE31C2C4822BF004BE4A8 /* Manager */,
 				A5CB6D4C2C453F5B00AF032B /* TabBarModule */,
+				A5BCE3452C53A2AD004BE4A8 /* ImageDetailModule */,
 				A5CB6D3D2C450D2300AF032B /* SavedPicturesModule */,
 				A5CB6D3A2C450CEA00AF032B /* DownloaderModule */,
 				A5CB6D262C45075A00AF032B /* AppDelegate.swift */,
@@ -162,6 +236,7 @@
 				A5CB6D612C4583F600AF032B /* Interactor */,
 				A5CB6D5A2C457AA100AF032B /* Presenter */,
 				A5CB6D532C4543B700AF032B /* View */,
+				A5BCE3422C53A1D6004BE4A8 /* Router */,
 			);
 			path = SavedPicturesModule;
 			sourceTree = "<group>";
@@ -345,16 +420,20 @@
 				A5CB6D602C4580BA00AF032B /* SavedPicturesDelegate.swift in Sources */,
 				A5CB6D682C465C7400AF032B /* Constants.swift in Sources */,
 				A5CB6D522C45419700AF032B /* TabbarController.swift in Sources */,
+				A5BCE34C2C53A396004BE4A8 /* ImageDetailViewController.swift in Sources */,
 				A5CB6D6E2C4685DE00AF032B /* TabbarConfigurator.swift in Sources */,
 				A5BCE3332C4E8F78004BE4A8 /* DownloaderPresenterProtocol.swift in Sources */,
 				A5BCE3312C4E8F4F004BE4A8 /* DownloaderViewProtocol.swift in Sources */,
 				A5CB6D402C450EE300AF032B /* DownloaderConfigurator.swift in Sources */,
+				A5BCE3582C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift in Sources */,
 				A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */,
 				A5BCE33B2C4FB3F9004BE4A8 /* SavedPictureCell.swift in Sources */,
+				A5BCE3442C53A217004BE4A8 /* SavedPicturesRouter.swift in Sources */,
 				A5BCE32D2C4E8E7E004BE4A8 /* TabbarViewProtocol.swift in Sources */,
 				A5BCE3252C4E8C0A004BE4A8 /* SavedPicturesConfiguratorProtocol.swift in Sources */,
 				A5BCE3352C4E8FBF004BE4A8 /* DownloaderInteractorProtocol.swift in Sources */,
 				A5BCE32F2C4E8E9C004BE4A8 /* TabbarConfiguratorProtocol.swift in Sources */,
+				A5BCE35A2C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift in Sources */,
 				A5CB6D632C45842900AF032B /* SavedPicturesInteractor.swift in Sources */,
 				A5CB6D5E2C45802E00AF032B /* SavedPicturesDataSource.swift in Sources */,
 				A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */,
@@ -363,8 +442,13 @@
 				A5BCE3272C4E8C3F004BE4A8 /* SavedPicturesViewProtocol.swift in Sources */,
 				A5BCE3222C4AAD15004BE4A8 /* ManagerProtocols.swift in Sources */,
 				A5BCE3292C4E8CA4004BE4A8 /* SavedPicturesPresenterProtocol.swift in Sources */,
+				A5BCE34E2C53A44B004BE4A8 /* ImageDetailConfigurator.swift in Sources */,
+				A5BCE3542C53DB9B004BE4A8 /* ImageDetailOutputProtocol.swift in Sources */,
 				A5BCE33F2C5270CB004BE4A8 /* KeychainHelper.swift in Sources */,
+				A5BCE3502C53A6F5004BE4A8 /* SavedPicturesRouterInputProtocol.swift in Sources */,
+				A5BCE3562C53DF22004BE4A8 /* ImageDetailRouter.swift in Sources */,
 				A5CB6D492C451E6200AF032B /* DownloaderPresenter.swift in Sources */,
+				A5BCE3522C53DB4F004BE4A8 /* ImageDetailPresenter.swift in Sources */,
 				A5CB6D4B2C452B4B00AF032B /* DownloaderInteractor.swift in Sources */,
 				A5BCE33D2C52454E004BE4A8 /* ImageEncryptor.swift in Sources */,
 				A5BCE3412C52AA49004BE4A8 /* Extension.swift in Sources */,

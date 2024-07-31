@@ -77,7 +77,7 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     }
     
     private func updateViewMode() {
-        let layout: UICollectionViewLayout
+        let layout: UICollectionViewFlowLayout
         
         if isGridMode {
             floatingButton.setImage(UIImage(systemName: "square.stack.fill"), for: .normal)

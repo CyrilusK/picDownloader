@@ -15,15 +15,31 @@ final class SavedPicturesDelegate: NSObject, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.width / 2) - 15
-        return CGSize(width: size, height: size)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+        if presenter.isGridMode {
+            let size = (collectionView.frame.width / 2) - 15
+            return CGSize(width: size, height: size)
+        }
+        else {
+            let image = presenter.getImage(at: indexPath)
+            
+            let imageWidth = image.size.width
+            let imageHeight = image.size.height
+            
+            let maxWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width - 120
+            let maxHeight = collectionView.safeAreaLayoutGuide.layoutFrame.height - 120
+            
+            let widthRatio = maxWidth / imageWidth
+            let heightRatio = maxHeight / imageHeight
+            
+            let scale = min(widthRatio, heightRatio)
+            
+            return CGSize(width: imageWidth * scale, height: imageWidth * scale)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.didSelectImage(at: indexPath)
+        if presenter.isGridMode {
+            presenter.didSelectImage(at: indexPath)
+        }
     }
 }

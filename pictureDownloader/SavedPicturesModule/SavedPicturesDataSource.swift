@@ -20,7 +20,7 @@ final class SavedPicturesDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.reuseIdentifier, for: indexPath) as? SavedPictureCell else {
-            fatalError("[DEBUG] - Failed to dequeue SavedPictureCell")
+            return UICollectionViewCell()
         }
         let image = presenter.getImage(at: indexPath)
         cell.configure(with: image)

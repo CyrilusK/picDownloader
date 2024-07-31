@@ -56,6 +56,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     }
     
     private func setupCloseButton() {
+        closeButton.setTitleColor(.red, for: .normal)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.addSubview(closeButton)

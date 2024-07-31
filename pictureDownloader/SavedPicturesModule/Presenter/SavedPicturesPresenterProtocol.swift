@@ -9,6 +9,7 @@ import UIKit
 
 protocol SavedPicturesOutputProtocol: AnyObject {
     var images: [UIImage] { get }
+    var isGridMode: Bool { get }
     
     var dataSource: UICollectionViewDataSource? { get }
     var delegate: UICollectionViewDelegate? { get }
@@ -18,4 +19,5 @@ protocol SavedPicturesOutputProtocol: AnyObject {
     func didLoadImages(_ images: [UIImage])
     func getImage(at indexPath: IndexPath) -> UIImage
     func didSelectImage(at indexPath: IndexPath)
+    func setGridMode(_ isGridMode: Bool)
 }

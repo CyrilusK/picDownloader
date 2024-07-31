@@ -34,6 +34,8 @@
 		A5BCE3562C53DF22004BE4A8 /* ImageDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3552C53DF22004BE4A8 /* ImageDetailRouter.swift */; };
 		A5BCE3582C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3572C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift */; };
 		A5BCE35A2C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3592C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift */; };
+		A5BCE35E2C57CF95004BE4A8 /* CarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE35D2C57CF95004BE4A8 /* CarouselFlowLayout.swift */; };
+		A5BCE3882C5A7C3B004BE4A8 /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3872C5A7C3B004BE4A8 /* GridFlowLayout.swift */; };
 		A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D262C45075A00AF032B /* AppDelegate.swift */; };
 		A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D282C45075A00AF032B /* SceneDelegate.swift */; };
 		A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */; };
@@ -81,6 +83,8 @@
 		A5BCE3552C53DF22004BE4A8 /* ImageDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailRouter.swift; sourceTree = "<group>"; };
 		A5BCE3572C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailRouterInputProtocol.swift; sourceTree = "<group>"; };
 		A5BCE3592C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewInputProtocol.swift; sourceTree = "<group>"; };
+		A5BCE35D2C57CF95004BE4A8 /* CarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFlowLayout.swift; sourceTree = "<group>"; };
+		A5BCE3872C5A7C3B004BE4A8 /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
 		A5CB6D232C45075A00AF032B /* pictureDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictureDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB6D262C45075A00AF032B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D282C45075A00AF032B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 				A5CB6D542C4543D900AF032B /* SavedPicturesViewController.swift */,
 				A5BCE33A2C4FB3F9004BE4A8 /* SavedPictureCell.swift */,
 				A5BCE3262C4E8C3F004BE4A8 /* SavedPicturesViewProtocol.swift */,
+				A5BCE35D2C57CF95004BE4A8 /* CarouselFlowLayout.swift */,
+				A5BCE3872C5A7C3B004BE4A8 /* GridFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,8 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5BCE35E2C57CF95004BE4A8 /* CarouselFlowLayout.swift in Sources */,
 				A5BCE3202C4AA6BD004BE4A8 /* ImageStorage.swift in Sources */,
 				A5CB6D662C4584D000AF032B /* SavedPicturesConfigurator.swift in Sources */,
+				A5BCE3882C5A7C3B004BE4A8 /* GridFlowLayout.swift in Sources */,
 				A5BCE32B2C4E8CDA004BE4A8 /* SavedPicturesInteractorProtocol.swift in Sources */,
 				A5CB6D5C2C457DE700AF032B /* SavedPicturesPresenter.swift in Sources */,
 				A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */,

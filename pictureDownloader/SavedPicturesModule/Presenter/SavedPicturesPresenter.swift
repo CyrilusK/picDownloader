@@ -17,6 +17,8 @@ final class SavedPicturesPresenter: SavedPicturesOutputProtocol {
     var dataSource: UICollectionViewDataSource?
     var delegate: UICollectionViewDelegate?
     
+    var isGridMode: Bool = true
+    
     init() {
         self.dataSource = SavedPicturesDataSource(presenter: self)
         self.delegate = SavedPicturesDelegate(presenter: self)
@@ -24,7 +26,7 @@ final class SavedPicturesPresenter: SavedPicturesOutputProtocol {
     
     func viewDidLoad() {
         interactor?.fetchSavedImages()
-        view?.setupCollectionView()
+        view?.setupUI()
     }
     
     func viewWillAppear() {
@@ -45,6 +47,10 @@ final class SavedPicturesPresenter: SavedPicturesOutputProtocol {
     func didSelectImage(at indexPath: IndexPath) {
         let image = getImage(at: indexPath)
         router?.presentImageDetail(image)
+    }
+    
+    func setGridMode(_ isGridMode: Bool) {
+        self.isGridMode = isGridMode
     }
 }
 

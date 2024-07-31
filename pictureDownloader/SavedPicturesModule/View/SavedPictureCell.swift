@@ -32,5 +32,4 @@ final class SavedPictureCell: UICollectionViewCell {
         super.prepareForReuse()
         imageView.image = nil
     }
-    
 }

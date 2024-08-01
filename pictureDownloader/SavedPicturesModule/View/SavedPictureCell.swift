@@ -11,15 +11,15 @@ final class SavedPictureCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.layer.cornerRadius = 20
-        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 25
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    func configure(with image: UIImage) {
+    func configure(with image: UIImage, isGridMode: Bool) {
         self.imageView.image = image
+        imageView.contentMode = isGridMode ? .scaleAspectFill : .scaleAspectFit
+        imageView.clipsToBounds = isGridMode
         self.setupUI()
     }
     

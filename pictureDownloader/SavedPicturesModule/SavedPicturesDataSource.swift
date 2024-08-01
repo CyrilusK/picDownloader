@@ -23,7 +23,7 @@ final class SavedPicturesDataSource: NSObject, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         let image = presenter.getImage(at: indexPath)
-        cell.configure(with: image)
+        cell.configure(with: image, isGridMode: presenter.isGridMode)
         return cell
     }
 }

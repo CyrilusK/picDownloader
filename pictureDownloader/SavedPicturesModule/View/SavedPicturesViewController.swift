@@ -15,6 +15,11 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
         return collectionView
     }()
     
+    var carouselCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: CarouselFlowLayout())
+        return collectionView
+    }()
+    
     private var isGridMode = true
     private let floatingButton = UIButton(type: .system)
     
@@ -29,28 +34,33 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     }
     
     func setupUI() {
-        setupCollectionView()
+        setupCollectionView(gridCollectionView)
+        setupCollectionView(carouselCollectionView)
         setupFloatingButton()
+        
+        gridCollectionView.isHidden = false
+        carouselCollectionView.isHidden = true
     }
     
-    private func setupCollectionView() {
-        view.addSubview(gridCollectionView)
-        gridCollectionView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupCollectionView(_ collectionView: UICollectionView) {
+        view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            gridCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            gridCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            gridCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            gridCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        gridCollectionView.register(SavedPictureCell.self, forCellWithReuseIdentifier: Constants.reuseIdentifier)
-        gridCollectionView.backgroundColor = .systemGroupedBackground
+        collectionView.register(SavedPictureCell.self, forCellWithReuseIdentifier: Constants.reuseIdentifier)
+        collectionView.backgroundColor = .systemGroupedBackground
         view.backgroundColor = .systemGroupedBackground
     }
     
     func reloadData() {
         gridCollectionView.reloadData()
+        carouselCollectionView.reloadData()
     }
     
     private func setupFloatingButton() {
@@ -77,18 +87,17 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     }
     
     private func updateViewMode() {
-        let layout: UICollectionViewFlowLayout
-        
         if isGridMode {
             floatingButton.setImage(UIImage(systemName: "square.stack.fill"), for: .normal)
-            layout = GridFlowLayout()
+            gridCollectionView.isHidden = false
+            carouselCollectionView.isHidden = true
+            gridCollectionView.collectionViewLayout.invalidateLayout()
         }
         else {
             floatingButton.setImage(UIImage(systemName: "square.grid.3x3.fill"), for: .normal)
-            layout = CarouselFlowLayout()
-        }
-        gridCollectionView.setCollectionViewLayout(layout, animated: true) {_ in
-            self.gridCollectionView.reloadData()
+            gridCollectionView.isHidden = true
+            carouselCollectionView.isHidden = false
+            carouselCollectionView.collectionViewLayout.invalidateLayout()
         }
     }
 }

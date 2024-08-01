@@ -23,6 +23,8 @@ final class SavedPicturesConfigurator: SavedPicturesConfiguratorProtocol {
         
         view.gridCollectionView.dataSource = presenter.dataSource
         view.gridCollectionView.delegate = presenter.delegate
+        view.carouselCollectionView.dataSource = presenter.dataSource
+        view.carouselCollectionView.delegate = presenter.delegate
         
         return view
     }

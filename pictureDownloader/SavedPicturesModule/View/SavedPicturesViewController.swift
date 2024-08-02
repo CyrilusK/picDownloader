@@ -10,15 +10,10 @@ import UIKit
 final class SavedPicturesViewController: UIViewController, SavedPicturesViewInputProtocol {
     var output: SavedPicturesOutputProtocol?
     
-    var gridCollectionView: UICollectionView = {
+    var gridOrCarouselCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        return collectionView
-    }()
-    
-    var carouselCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: CarouselFlowLayout())
         return collectionView
     }()
     
@@ -36,33 +31,28 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     }
     
     func setupUI() {
-        setupCollectionView(gridCollectionView)
-        setupCollectionView(carouselCollectionView)
+        setupCollectionView()
         setupFloatingButton()
-        
-        gridCollectionView.isHidden = false
-        carouselCollectionView.isHidden = true
     }
     
-    private func setupCollectionView(_ collectionView: UICollectionView) {
-        view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupCollectionView() {
+        view.addSubview(gridOrCarouselCollectionView)
+        gridOrCarouselCollectionView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            gridOrCarouselCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            gridOrCarouselCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            gridOrCarouselCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            gridOrCarouselCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        collectionView.register(SavedPictureCell.self, forCellWithReuseIdentifier: Constants.reuseIdentifier)
-        collectionView.backgroundColor = .systemGroupedBackground
+        gridOrCarouselCollectionView.register(SavedPictureCell.self, forCellWithReuseIdentifier: Constants.reuseIdentifier)
+        gridOrCarouselCollectionView.backgroundColor = .systemGroupedBackground
         view.backgroundColor = .systemGroupedBackground
     }
     
     func reloadData() {
-        gridCollectionView.reloadData()
-        carouselCollectionView.reloadData()
+        gridOrCarouselCollectionView.reloadData()
     }
     
     private func setupFloatingButton() {
@@ -95,15 +85,16 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     private func updateViewMode() {
         if isGridMode {
             floatingButton.setImage(UIImage(systemName: "square.stack.fill"), for: .normal)
-            gridCollectionView.isHidden = false
-            carouselCollectionView.isHidden = true
-            gridCollectionView.reloadData()
+            let layout = UICollectionViewFlowLayout()
+            layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            gridOrCarouselCollectionView.setCollectionViewLayout(layout, animated: false)
+            reloadData()
         }
         else {
             floatingButton.setImage(UIImage(systemName: "square.grid.3x3.fill"), for: .normal)
-            gridCollectionView.isHidden = true
-            carouselCollectionView.isHidden = false
-            carouselCollectionView.reloadData()
+            let layout = CarouselFlowLayout()
+            gridOrCarouselCollectionView.setCollectionViewLayout(layout, animated: false)
+            reloadData()
         }
     }
 }

@@ -1372,8 +1372,8 @@
             filePath = "pictureDownloader/SavedPicturesModule/View/SavedPicturesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "updateViewMode()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1388,8 +1388,8 @@
             filePath = "pictureDownloader/SavedPicturesModule/View/SavedPicturesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "updateViewMode()"
             landmarkType = "7">
             <Locations>
@@ -1422,54 +1422,6 @@
                   startingLineNumber = "87"
                   endingLineNumber = "87"
                   offsetFromSymbolStart = "376">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A5440416-BDDA-45A7-A0EA-4E961B66ED8B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/SavedPicturesModule/View/SavedPicturesViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "updateViewMode()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A5440416-BDDA-45A7-A0EA-4E961B66ED8B - 6a24ca4268a9b4b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.SavedPicturesViewController.updateViewMode() -&gt; ()"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/SavedPicturesModule/View/SavedPicturesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "384">
-               </Location>
-               <Location
-                  uuid = "A5440416-BDDA-45A7-A0EA-4E961B66ED8B - 6a24ca4268a9b4b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.SavedPicturesViewController.updateViewMode() -&gt; ()"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/SavedPicturesModule/View/SavedPicturesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "492">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -21,10 +21,8 @@ final class SavedPicturesConfigurator: SavedPicturesConfiguratorProtocol {
         interactor.output = presenter
         router.entry = view
         
-        view.gridCollectionView.dataSource = presenter.dataSource
-        view.gridCollectionView.delegate = presenter.delegate
-        view.carouselCollectionView.dataSource = presenter.dataSource
-        view.carouselCollectionView.delegate = presenter.delegate
+        view.gridOrCarouselCollectionView.dataSource = presenter.dataSource
+        view.gridOrCarouselCollectionView.delegate = presenter.delegate
         
         return view
     }

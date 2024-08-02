@@ -15,7 +15,6 @@ final class CarouselFlowLayout: UICollectionViewFlowLayout {
     override init() {
         super.init()
         scrollDirection = .horizontal
-        minimumLineSpacing = 10
     }
 
     required init?(coder: NSCoder) {
@@ -24,10 +23,12 @@ final class CarouselFlowLayout: UICollectionViewFlowLayout {
 
     override func prepare() {
         super.prepare()
+        
         guard let collectionView = collectionView else { fatalError() }
+        
         let verticalInsets = (collectionView.frame.height - collectionView.adjustedContentInset.bottom - collectionView.adjustedContentInset.top - itemSize.height) / 2
         let horizontalInsets = (collectionView.frame.width - collectionView.adjustedContentInset.left - collectionView.adjustedContentInset.right - itemSize.width) / 2
-        sectionInset = UIEdgeInsets(top: verticalInsets, left: horizontalInsets, bottom: verticalInsets, right: horizontalInsets)
+        sectionInset = UIEdgeInsets(top: verticalInsets - collectionView.safeAreaInsets.bottom, left: horizontalInsets, bottom: verticalInsets, right: horizontalInsets)
     }
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

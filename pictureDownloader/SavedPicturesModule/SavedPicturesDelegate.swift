@@ -20,20 +20,7 @@ final class SavedPicturesDelegate: NSObject, UICollectionViewDelegate, UICollect
             return CGSize(width: size, height: size)
         }
         else {
-            let image = presenter.getImage(at: indexPath)
-            
-            let imageWidth = image.size.width
-            let imageHeight = image.size.height
-            
-            let maxWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width - 120
-            let maxHeight = collectionView.safeAreaLayoutGuide.layoutFrame.height - 120
-            
-            let widthRatio = maxWidth / imageWidth
-            let heightRatio = maxHeight / imageHeight
-            
-            let scale = min(widthRatio, heightRatio)
-            
-            return CGSize(width: imageWidth * scale, height: imageWidth * scale)
+            return CGSize(width: collectionView.frame.width * 0.7, height: collectionView.frame.height * 0.7 - collectionView.safeAreaInsets.bottom)
         }
     }
     

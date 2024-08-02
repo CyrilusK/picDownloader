@@ -11,7 +11,9 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     var output: SavedPicturesOutputProtocol?
     
     var gridCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: GridFlowLayout())
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
     
@@ -86,18 +88,22 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
         updateViewMode()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        reloadData()
+    }
+    
     private func updateViewMode() {
         if isGridMode {
             floatingButton.setImage(UIImage(systemName: "square.stack.fill"), for: .normal)
             gridCollectionView.isHidden = false
             carouselCollectionView.isHidden = true
-            gridCollectionView.collectionViewLayout.invalidateLayout()
+            gridCollectionView.reloadData()
         }
         else {
             floatingButton.setImage(UIImage(systemName: "square.grid.3x3.fill"), for: .normal)
             gridCollectionView.isHidden = true
             carouselCollectionView.isHidden = false
-            carouselCollectionView.collectionViewLayout.invalidateLayout()
+            carouselCollectionView.reloadData()
         }
     }
 }

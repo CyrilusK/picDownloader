@@ -1372,8 +1372,8 @@
             filePath = "pictureDownloader/SavedPicturesModule/View/SavedPicturesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "updateViewMode()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1388,8 +1388,8 @@
             filePath = "pictureDownloader/SavedPicturesModule/View/SavedPicturesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "updateViewMode()"
             landmarkType = "7">
             <Locations>
@@ -1436,8 +1436,8 @@
             filePath = "pictureDownloader/SavedPicturesModule/View/SavedPicturesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "updateViewMode()"
             landmarkType = "7">
             <Locations>

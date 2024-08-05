@@ -35,6 +35,9 @@
 		A5BCE3582C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3572C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift */; };
 		A5BCE35A2C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3592C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift */; };
 		A5BCE35E2C57CF95004BE4A8 /* CarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE35D2C57CF95004BE4A8 /* CarouselFlowLayout.swift */; };
+		A5BCE3902C60EACD004BE4A8 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE38F2C60EACD004BE4A8 /* DeepLink.swift */; };
+		A5BCE3932C610FBD004BE4A8 /* TabbarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3922C610FBD004BE4A8 /* TabbarPresenter.swift */; };
+		A5BCE3962C611049004BE4A8 /* TabbarOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3952C611049004BE4A8 /* TabbarOutputProtocol.swift */; };
 		A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D262C45075A00AF032B /* AppDelegate.swift */; };
 		A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D282C45075A00AF032B /* SceneDelegate.swift */; };
 		A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */; };
@@ -83,6 +86,9 @@
 		A5BCE3572C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailRouterInputProtocol.swift; sourceTree = "<group>"; };
 		A5BCE3592C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewInputProtocol.swift; sourceTree = "<group>"; };
 		A5BCE35D2C57CF95004BE4A8 /* CarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFlowLayout.swift; sourceTree = "<group>"; };
+		A5BCE38F2C60EACD004BE4A8 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
+		A5BCE3922C610FBD004BE4A8 /* TabbarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarPresenter.swift; sourceTree = "<group>"; };
+		A5BCE3952C611049004BE4A8 /* TabbarOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarOutputProtocol.swift; sourceTree = "<group>"; };
 		A5CB6D232C45075A00AF032B /* pictureDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictureDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB6D262C45075A00AF032B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D282C45075A00AF032B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +186,15 @@
 				A5BCE3572C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		A5BCE3912C610EAB004BE4A8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3922C610FBD004BE4A8 /* TabbarPresenter.swift */,
+				A5BCE3952C611049004BE4A8 /* TabbarOutputProtocol.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		A5CB6D1A2C45075A00AF032B = {
@@ -282,6 +297,8 @@
 		A5CB6D4C2C453F5B00AF032B /* TabBarModule */ = {
 			isa = PBXGroup;
 			children = (
+				A5BCE38F2C60EACD004BE4A8 /* DeepLink.swift */,
+				A5BCE3912C610EAB004BE4A8 /* Presenter */,
 				A5CB6D502C45412100AF032B /* Configurator */,
 				A5CB6D4D2C453F6B00AF032B /* View */,
 			);
@@ -431,6 +448,7 @@
 				A5CB6D402C450EE300AF032B /* DownloaderConfigurator.swift in Sources */,
 				A5BCE3582C53E002004BE4A8 /* ImageDetailRouterInputProtocol.swift in Sources */,
 				A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */,
+				A5BCE3932C610FBD004BE4A8 /* TabbarPresenter.swift in Sources */,
 				A5BCE33B2C4FB3F9004BE4A8 /* SavedPictureCell.swift in Sources */,
 				A5BCE3442C53A217004BE4A8 /* SavedPicturesRouter.swift in Sources */,
 				A5BCE32D2C4E8E7E004BE4A8 /* TabbarViewProtocol.swift in Sources */,
@@ -439,9 +457,11 @@
 				A5BCE32F2C4E8E9C004BE4A8 /* TabbarConfiguratorProtocol.swift in Sources */,
 				A5BCE35A2C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift in Sources */,
 				A5CB6D632C45842900AF032B /* SavedPicturesInteractor.swift in Sources */,
+				A5BCE3902C60EACD004BE4A8 /* DeepLink.swift in Sources */,
 				A5CB6D5E2C45802E00AF032B /* SavedPicturesDataSource.swift in Sources */,
 				A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */,
 				A5BCE3372C4E8FFA004BE4A8 /* DownloaderConfiguratorProtocol.swift in Sources */,
+				A5BCE3962C611049004BE4A8 /* TabbarOutputProtocol.swift in Sources */,
 				A5BCE3392C4EB104004BE4A8 /* DownloaderTextFieldDelegate.swift in Sources */,
 				A5BCE3272C4E8C3F004BE4A8 /* SavedPicturesViewProtocol.swift in Sources */,
 				A5BCE3222C4AAD15004BE4A8 /* ManagerProtocols.swift in Sources */,

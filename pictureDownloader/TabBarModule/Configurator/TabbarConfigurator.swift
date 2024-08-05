@@ -8,8 +8,13 @@
 import UIKit
 
 final class TabbarConfigurator: TabbarConfiguratorProtocol {
-    func configure() -> UITabBarController {
+    func configure() -> TabbarController {
         let view = TabbarController()
+        let presenter = TabbarPresenter()
+        
+        view.output = presenter
+        presenter.view = view
+        
         return view
     }
 }

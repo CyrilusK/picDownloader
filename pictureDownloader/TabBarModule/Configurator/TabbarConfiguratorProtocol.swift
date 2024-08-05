@@ -8,5 +8,5 @@
 import UIKit
 
 protocol TabbarConfiguratorProtocol: AnyObject {
-    func configure() -> UITabBarController
+    func configure() -> TabbarController
 }

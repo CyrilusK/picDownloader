@@ -8,6 +8,7 @@
 import UIKit
 
 protocol TabbarOutputProtocol {
-    func viewDidLoad()
+    //func viewDidLoad()
     func handleDeepLink(_ deeplink: DeepLink)
+    func downloadImage(from url: String)
 }

@@ -41,15 +41,7 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
     }
     
     func handleDeepLink(_ deeplink: DeepLink) {
-        //output?.handleDeepLink(deeplink)
-        switch deeplink {
-        case .search:
-            self.selectedIndex = 0
-            showAlert()
-        case .saved:
-            self.selectedIndex = 1
-            showAlert()
-        }
+        output?.handleDeepLink(deeplink)
     }
     
     func showAlert() {
@@ -64,21 +56,8 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
                 return
             }
             
-            let imageDownloader = ImageDownloader()
-            let imageStorage = ImageStorage(imageEncryptor: ImageEncryptor())
-            let imageName = urlString.md5 + ".png"
+            self.output?.downloadImage(from: urlString)
             
-            imageDownloader.fetchImage(from: urlString) { result in
-                switch result {
-                case .success(let image):
-                    imageStorage.saveImage(image, withName: imageName)
-                    DispatchQueue.main.async {
-                        self.gridSavedVC.viewWillAppear(true)
-                    }
-                case .failure(let error):
-                    self.showErrorAlert(message: "Не удалось загрузить изображение: \(error.localizedDescription)")
-                }
-            }
         }
         alert.addAction(dwnldAction)
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
@@ -86,10 +65,15 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
         present(alert, animated: true)
     }
     
+    
     func showErrorAlert(message: String) {
         let errorAlert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         errorAlert.addAction(okAction)
         present(errorAlert, animated: true)
+    }
+    
+    func reloadGridSavedVC() {
+        self.gridSavedVC.viewWillAppear(true)
     }
 }

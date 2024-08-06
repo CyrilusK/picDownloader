@@ -27,7 +27,7 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        output?.viewWillAppear()
+        output?.reloadImages()
     }
     
     func setupUI() {
@@ -53,6 +53,10 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     
     func reloadData() {
         gridOrCarouselCollectionView.reloadData()
+    }
+    
+    func reloadImages() {
+        output?.reloadImages()
     }
     
     private func setupFloatingButton() {

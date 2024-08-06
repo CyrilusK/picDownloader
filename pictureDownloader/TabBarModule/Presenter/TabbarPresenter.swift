@@ -9,6 +9,7 @@ import UIKit
 
 final class TabbarPresenter: TabbarOutputProtocol {
     weak var view: TabbarViewProtocol?
+    var interactor: TabbarInteractorInputProtocol?
     
 //    func viewDidLoad() {
 //        view?.setupTabs()
@@ -25,23 +26,20 @@ final class TabbarPresenter: TabbarOutputProtocol {
         }
     }
     
-    func downloadImage(from url: String) {
-        let imageDownloader = ImageDownloader()
-        let imageStorage = ImageStorage(imageEncryptor: ImageEncryptor())
-        let imageName = url.md5 + ".png"
-        
-        imageDownloader.fetchImage(from: url) { result in
-            switch result {
-            case .success(let image):
-                imageStorage.saveImage(image, withName: imageName)
-                DispatchQueue.main.async {
-                    self.view?.reloadGridSavedVC()
-                }
-            case .failure(let error):
-                self.view?.showErrorAlert(message: "Не удалось загрузить изображение: \(error.localizedDescription)")
-            }
+    func requestDownloadImage(from url: String) {
+        interactor?.downloadImage(from: url)
+    }
+    
+    func requestReload() {
+        DispatchQueue.main.async {
+            self.view?.reloadGridSavedPics()
         }
     }
     
+    func passResult(message: String) {
+        DispatchQueue.main.async {
+            self.view?.showErrorAlert(message: message)
+        }
+    }
 }
 

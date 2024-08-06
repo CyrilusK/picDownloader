@@ -15,7 +15,7 @@ protocol SavedPicturesOutputProtocol: AnyObject {
     var delegate: UICollectionViewDelegate? { get }
     
     func viewDidLoad()
-    func viewWillAppear()
+    func reloadImages()
     func didLoadImages(_ images: [UIImage])
     func getImage(at indexPath: IndexPath) -> UIImage
     func didSelectImage(at indexPath: IndexPath)

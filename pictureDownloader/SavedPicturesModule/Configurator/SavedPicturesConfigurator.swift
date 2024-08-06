@@ -8,7 +8,7 @@
 import UIKit
 
 final class SavedPicturesConfigurator: SavedPicturesConfiguratorProtocol {
-    func configure(imageStorage: ImageStorageProtocol) -> UIViewController {
+    func configure(imageStorage: ImageStorageProtocol) -> SavedPicturesViewController {
         let view = SavedPicturesViewController()
         let interactor = SavedPicturesInteractor(imageStorage: imageStorage)
         let presenter = SavedPicturesPresenter()

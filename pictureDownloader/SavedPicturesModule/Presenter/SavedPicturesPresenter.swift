@@ -29,7 +29,7 @@ final class SavedPicturesPresenter: SavedPicturesOutputProtocol {
         view?.setupUI()
     }
     
-    func viewWillAppear() {
+    func reloadImages() {
         interactor?.fetchSavedImages()
     }
     

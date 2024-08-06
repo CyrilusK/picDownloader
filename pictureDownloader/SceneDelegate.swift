@@ -10,38 +10,28 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let tabbarVC = TabbarConfigurator().configure()
+    private var deepLinkHandler: DeepLinkHandler?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
-        let initalVC = tabbarVC
+        let initalVC = TabbarConfigurator().configure()
         let window = UIWindow(windowScene: scene)
         window.rootViewController = initalVC
         self.window = window
         self.window?.makeKeyAndVisible()
+        
+        deepLinkHandler = DeepLinkHandler(tabBarController: initalVC)
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url else { return }
-        handleDeepLinkURL(url)
+        deepLinkHandler?.handleDeepLink(url)
     }
     
-    private func handleDeepLinkURL(_ url: URL) {
-        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true), let host = components.host else {
-            print("[DEBUG] - Invalid URL")
-            return
-        }
-        
-        guard let deepLink = DeepLink(rawValue: host) else {
-            print("[DEBUG] - Deeplink not found: \(host)")
-            return
-        }
-        
-        tabbarVC.handleDeepLink(deepLink)
-    }
+   
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

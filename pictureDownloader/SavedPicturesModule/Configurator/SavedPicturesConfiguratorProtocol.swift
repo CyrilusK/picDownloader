@@ -8,5 +8,5 @@
 import UIKit
 
 protocol SavedPicturesConfiguratorProtocol {
-    func configure(imageStorage: ImageStorageProtocol) -> UIViewController
+    func configure(imageStorage: ImageStorageProtocol) -> SavedPicturesViewController
 }

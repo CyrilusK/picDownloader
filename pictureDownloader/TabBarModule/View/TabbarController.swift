@@ -56,7 +56,7 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
                 return
             }
             
-            self.output?.downloadImage(from: urlString)
+            self.output?.requestDownloadImage(from: urlString)
             
         }
         alert.addAction(dwnldAction)
@@ -73,7 +73,7 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
         present(errorAlert, animated: true)
     }
     
-    func reloadGridSavedVC() {
-        self.gridSavedVC.viewWillAppear(true)
+    func reloadGridSavedPics() {
+        gridSavedVC.reloadImages()
     }
 }

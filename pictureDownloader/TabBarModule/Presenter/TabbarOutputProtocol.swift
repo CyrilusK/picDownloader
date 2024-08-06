@@ -7,8 +7,10 @@
 
 import UIKit
 
-protocol TabbarOutputProtocol {
+protocol TabbarOutputProtocol: AnyObject {
     //func viewDidLoad()
     func handleDeepLink(_ deeplink: DeepLink)
-    func downloadImage(from url: String)
+    func requestDownloadImage(from url: String)
+    func requestReload()
+    func passResult(message: String)
 }

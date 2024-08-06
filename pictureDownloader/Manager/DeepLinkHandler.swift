@@ -13,10 +13,10 @@ enum DeepLink: String {
 }
 
 final class DeepLinkHandler {
-    private let tabBarController: TabbarController
+    private let window: UIWindow?
     
-    init(tabBarController: TabbarController) {
-        self.tabBarController = tabBarController
+    init(window: UIWindow) {
+        self.window = window
     }
     
     func handleDeepLink(_ url: URL) {
@@ -30,6 +30,11 @@ final class DeepLinkHandler {
             return
         }
         
+        handleDeepLink(deepLink)
+    }
+    
+    private func handleDeepLink(_ deepLink: DeepLink) {
+        guard let tabBarController = window?.rootViewController as? TabbarController else { return }
         tabBarController.handleDeepLink(deepLink)
     }
 }

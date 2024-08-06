@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         self.window?.makeKeyAndVisible()
         
-        deepLinkHandler = DeepLinkHandler(tabBarController: initalVC)
+        deepLinkHandler = DeepLinkHandler(window: window)
         
         if let urlContext = connectionOptions.urlContexts.first {
             deepLinkHandler?.handleDeepLink(urlContext.url)

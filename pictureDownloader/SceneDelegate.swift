@@ -24,14 +24,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.makeKeyAndVisible()
         
         deepLinkHandler = DeepLinkHandler(tabBarController: initalVC)
+        
+        if let urlContext = connectionOptions.urlContexts.first {
+            deepLinkHandler?.handleDeepLink(urlContext.url)
+        }
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url else { return }
         deepLinkHandler?.handleDeepLink(url)
     }
-    
-   
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

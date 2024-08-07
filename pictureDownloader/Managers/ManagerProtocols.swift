@@ -16,3 +16,4 @@ protocol ImageStorageProtocol {
     func loadSavedImages() -> [UIImage]
     func getImage(withName name: String) -> UIImage?
 }
+

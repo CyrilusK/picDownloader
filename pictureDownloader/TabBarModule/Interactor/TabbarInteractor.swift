@@ -13,12 +13,14 @@ final class TabbarInteractor: TabbarInteractorInputProtocol {
     func downloadImage(from url: String) {
         let imageDownloader = ImageDownloader()
         let imageStorage = ImageStorage(imageEncryptor: ImageEncryptor())
+        let notification = NotificationManager()
         let imageName = url.md5 + ".png"
         
         imageDownloader.fetchImage(from: url) { result in
             switch result {
             case .success(let image):
                 imageStorage.saveImage(image, withName: imageName)
+                notification.scheduleDownloadSuccessNotification()
                 DispatchQueue.main.async {
                     self.output?.requestReload()
                 }

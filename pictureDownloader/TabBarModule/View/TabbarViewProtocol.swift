@@ -10,7 +10,6 @@ import UIKit
 protocol TabbarViewProtocol: AnyObject {
     var selectedIndex: Int { get set }
     
-    //func setupTabs()
     func handleDeepLink(_ deeplink: DeepLink)
     func showAlert()
     func showErrorAlert(message: String)

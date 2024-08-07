@@ -19,6 +19,8 @@ final class DownloaderInteractor: DownloaderInteractorInputProtocol {
     
     //https://cataas.com/cat
     func fetchImage(_ url: String) {
+        let notification = NotificationManager()
+        
         let imageName = url.md5 + ".png"
         
         if let cachedImage = imageStorage.getImage(withName: imageName) {
@@ -30,6 +32,7 @@ final class DownloaderInteractor: DownloaderInteractorInputProtocol {
             switch result {
             case .success(let image):
                 self?.imageStorage.saveImage(image, withName: imageName)
+                notification.scheduleDownloadSuccessNotification()
                 self?.output?.didFetchImage(image)
             case .failure(let error):
                 self?.output?.didFailWithError(error)

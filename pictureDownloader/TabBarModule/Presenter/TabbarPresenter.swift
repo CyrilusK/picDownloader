@@ -11,10 +11,6 @@ final class TabbarPresenter: TabbarOutputProtocol {
     weak var view: TabbarViewProtocol?
     var interactor: TabbarInteractorInputProtocol?
     
-//    func viewDidLoad() {
-//        view?.setupTabs()
-//    }
-    
     func handleDeepLink(_ deeplink: DeepLink) {
         switch deeplink {
         case .search:

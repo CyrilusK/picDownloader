@@ -11,33 +11,8 @@ import CryptoKit
 final class TabbarController: UITabBarController, TabbarViewProtocol {
     var output: TabbarOutputProtocol?
     
-    private let gridSavedVC = SavedPicturesConfigurator().configure(imageStorage: ImageStorage(imageEncryptor: ImageEncryptor()))
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //output?.viewDidLoad()
-        setupTabs()
-    }
-    
-    func setupTabs() {
-        self.selectedIndex = 0
-        self.tabBar.tintColor = UIColor.blue
-        extendedLayoutIncludesOpaqueBars = true
-        
-        let gridSavedBarItem = UITabBarItem()
-        gridSavedBarItem.image = UIImage(systemName: "square.grid.3x3.fill")
-        gridSavedVC.tabBarItem = gridSavedBarItem
-        
-        let imageStorage = ImageStorage(imageEncryptor: ImageEncryptor())
-        let imageVC = DownloaderConfigurator().configure(imageDownloader: ImageDownloader(), imageStorage: imageStorage)
-        let imageBarItem = UITabBarItem()
-        imageBarItem.image = UIImage(systemName: "plus.magnifyingglass")
-        imageVC.tabBarItem = imageBarItem
-        
-        viewControllers = [
-            imageVC,
-            gridSavedVC
-        ]
     }
     
     func handleDeepLink(_ deeplink: DeepLink) {
@@ -74,6 +49,7 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
     }
     
     func reloadGridSavedPics() {
+        guard let gridSavedVC = viewControllers?.last as? SavedPicturesViewController else { return }
         gridSavedVC.reloadImages()
     }
 }

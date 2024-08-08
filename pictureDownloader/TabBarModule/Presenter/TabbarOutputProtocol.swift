@@ -10,6 +10,5 @@ import UIKit
 protocol TabbarOutputProtocol: AnyObject {
     func handleDeepLink(_ deeplink: DeepLink)
     func requestDownloadImage(from url: String)
-    func requestReload()
     func passResult(message: String)
 }

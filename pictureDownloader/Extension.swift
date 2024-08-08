@@ -15,4 +15,8 @@ var md5: String {
     }
 }
 
+extension Notification.Name {
+    static let imageDownloaded = Notification.Name("imageDownloaded")
+}
+
 

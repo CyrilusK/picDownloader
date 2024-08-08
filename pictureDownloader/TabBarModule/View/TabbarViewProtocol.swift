@@ -13,5 +13,4 @@ protocol TabbarViewProtocol: AnyObject {
     func handleDeepLink(_ deeplink: DeepLink)
     func showAlert()
     func showErrorAlert(message: String)
-    func reloadGridSavedPics()
 }

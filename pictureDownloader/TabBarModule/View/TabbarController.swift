@@ -47,9 +47,4 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
         errorAlert.addAction(okAction)
         present(errorAlert, animated: true)
     }
-    
-    func reloadGridSavedPics() {
-        guard let gridSavedVC = viewControllers?.last as? SavedPicturesViewController else { return }
-        gridSavedVC.reloadImages()
-    }
 }

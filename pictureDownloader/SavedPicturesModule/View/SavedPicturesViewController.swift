@@ -23,10 +23,10 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(imageDownloaded), name: .imageDownloaded, object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    @objc private func imageDownloaded() {
         output?.reloadImages()
     }
     
@@ -53,10 +53,6 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     
     func reloadData() {
         gridOrCarouselCollectionView.reloadData()
-    }
-    
-    func reloadImages() {
-        output?.reloadImages()
     }
     
     private func setupFloatingButton() {

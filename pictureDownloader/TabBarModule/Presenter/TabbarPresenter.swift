@@ -26,12 +26,6 @@ final class TabbarPresenter: TabbarOutputProtocol {
         interactor?.downloadImage(from: url)
     }
     
-    func requestReload() {
-        DispatchQueue.main.async {
-            self.view?.reloadGridSavedPics()
-        }
-    }
-    
     func passResult(message: String) {
         DispatchQueue.main.async {
             self.view?.showErrorAlert(message: message)

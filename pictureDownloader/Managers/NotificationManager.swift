@@ -29,12 +29,15 @@ final class NotificationManager {
         content.body = "Картинка успешно скачана"
         content.sound = .default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
-        let request = UNNotificationRequest(identifier: "downloadSuccess", content: content, trigger: trigger)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        let request = UNNotificationRequest(identifier: Constants.downloadSuccess, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("[DEBUG] - Ошибка при добавлении уведомления: \(error.localizedDescription)")
+            }
+            else {
+                NotificationCenter.default.post(name: .imageDownloaded, object: nil)
             }
         }
     }
@@ -46,7 +49,7 @@ final class NotificationManager {
         content.sound = .default
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60 * 60 * 24, repeats: true)
-        let request = UNNotificationRequest(identifier: "dailyReminder", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: Constants.dailyReminder, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
@@ -56,7 +59,7 @@ final class NotificationManager {
     }
     
     func removeScheduledNotification() {
-        center.removePendingNotificationRequests(withIdentifiers: ["dailyReminder"])
+        center.removePendingNotificationRequests(withIdentifiers: [Constants.dailyReminder])
     }
 }
 

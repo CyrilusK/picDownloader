@@ -12,9 +12,11 @@ final class ImageDetailConfigurator {
         let view = ImageDetailViewController()
         let presenter = ImageDetailPresenter(image: image)
         let router = ImageDetailRouter()
+        let interactor = ImageDetailInteractor()
         
         view.output = presenter
         presenter.view = view
+        presenter.interactor = interactor
         presenter.router = router
         router.viewController = view
         

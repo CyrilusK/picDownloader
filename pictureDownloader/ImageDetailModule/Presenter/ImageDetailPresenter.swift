@@ -10,6 +10,7 @@ import UIKit
 class ImageDetailPresenter: ImageDetailOutputProtocol{
     weak var view: ImageDetailViewInputProtocol?
     var router: ImageDetailRouterInputProtocol?
+    var interactor: ImageDetailInteractorInputProtocol?
     var image: UIImage
     
     init(image: UIImage) {
@@ -20,7 +21,15 @@ class ImageDetailPresenter: ImageDetailOutputProtocol{
         view?.setupUI(withImage: image)
     }
     
+    func applyFilter(named filterName: String, with image: UIImage) -> CGImage? {
+        return interactor?.applyFilter(named: filterName, with: image)
+    }
+    
     func didTapCloseButton() {
         router?.dismiss()
+    }
+    
+    func getOriginalImage() -> UIImage {
+        image
     }
 }

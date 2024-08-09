@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol ImageDetailOutputProtocol {
+protocol ImageDetailOutputProtocol: AnyObject {
     func viewDidLoad()
     func didTapCloseButton()
+    func applyFilter(named filterName: String, with image: UIImage) -> CGImage?
+    func getOriginalImage() -> UIImage
 }

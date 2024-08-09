@@ -41,6 +41,8 @@
 		A5BCE39B2C621B57004BE4A8 /* TabbarInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE39A2C621B57004BE4A8 /* TabbarInteractorInputProtocol.swift */; };
 		A5BCE39D2C622884004BE4A8 /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE39C2C622884004BE4A8 /* DeepLinkHandler.swift */; };
 		A5BCE39F2C6399D4004BE4A8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE39E2C6399D4004BE4A8 /* NotificationManager.swift */; };
+		A5BCE3A22C667DB3004BE4A8 /* ImageDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A12C667DB3004BE4A8 /* ImageDetailInteractor.swift */; };
+		A5BCE3A42C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A32C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift */; };
 		A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D262C45075A00AF032B /* AppDelegate.swift */; };
 		A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D282C45075A00AF032B /* SceneDelegate.swift */; };
 		A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */; };
@@ -95,6 +97,8 @@
 		A5BCE39A2C621B57004BE4A8 /* TabbarInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		A5BCE39C2C622884004BE4A8 /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
 		A5BCE39E2C6399D4004BE4A8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A5BCE3A12C667DB3004BE4A8 /* ImageDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailInteractor.swift; sourceTree = "<group>"; };
+		A5BCE3A32C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		A5CB6D232C45075A00AF032B /* pictureDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictureDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB6D262C45075A00AF032B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D282C45075A00AF032B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		A5BCE3452C53A2AD004BE4A8 /* ImageDetailModule */ = {
 			isa = PBXGroup;
 			children = (
+				A5BCE3A02C667D7E004BE4A8 /* Interactor */,
 				A5BCE34A2C53A327004BE4A8 /* Router */,
 				A5BCE3492C53A31B004BE4A8 /* View */,
 				A5BCE3482C53A305004BE4A8 /* Presenter */,
@@ -210,6 +215,15 @@
 			children = (
 				A5BCE3982C621B05004BE4A8 /* TabbarInteractor.swift */,
 				A5BCE39A2C621B57004BE4A8 /* TabbarInteractorInputProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A5BCE3A02C667D7E004BE4A8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3A12C667DB3004BE4A8 /* ImageDetailInteractor.swift */,
+				A5BCE3A32C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -451,11 +465,13 @@
 				A5BCE35E2C57CF95004BE4A8 /* CarouselFlowLayout.swift in Sources */,
 				A5BCE3202C4AA6BD004BE4A8 /* ImageStorage.swift in Sources */,
 				A5CB6D662C4584D000AF032B /* SavedPicturesConfigurator.swift in Sources */,
+				A5BCE3A22C667DB3004BE4A8 /* ImageDetailInteractor.swift in Sources */,
 				A5BCE32B2C4E8CDA004BE4A8 /* SavedPicturesInteractorProtocol.swift in Sources */,
 				A5CB6D5C2C457DE700AF032B /* SavedPicturesPresenter.swift in Sources */,
 				A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */,
 				A5BCE31E2C4AA6A3004BE4A8 /* ImageDownloader.swift in Sources */,
 				A5CB6D602C4580BA00AF032B /* SavedPicturesDelegate.swift in Sources */,
+				A5BCE3A42C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift in Sources */,
 				A5CB6D682C465C7400AF032B /* Constants.swift in Sources */,
 				A5CB6D522C45419700AF032B /* TabbarController.swift in Sources */,
 				A5BCE34C2C53A396004BE4A8 /* ImageDetailViewController.swift in Sources */,

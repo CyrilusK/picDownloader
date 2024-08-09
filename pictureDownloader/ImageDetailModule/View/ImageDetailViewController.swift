@@ -15,7 +15,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     private let filterScrollView = UIScrollView()
     private var imageView = UIImageView()
     private var closeButton = UIButton(type: .close)
-    private var originalImage: UIImage?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
             
             DispatchQueue.main.async {
                 guard let image = self.imageView.image else { return }
-                let filteredImage = filter == .original ? image.cgImage : self.applyFilter(named: filter.rawValue, with: image)
+                let filteredImage = filter == .original ? image.cgImage : self.output?.applyFilter(named: filter.rawValue, with: image)
                 if let cgImage = filteredImage {
                     button.setBackgroundImage(UIImage(cgImage: cgImage), for: .normal)
                 }
@@ -76,18 +76,8 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
               let filterType = FilterTypes.allCases.first(where: { $0.description == filterName }) else { return }
         guard let image = imageView.image else { return }
         
-        guard let filteredImage = filterType == .original ? originalImage?.cgImage : applyFilter(named: filterType.rawValue, with: image) else { return }
+        guard let filteredImage = filterType == .original ? output?.getOriginalImage().cgImage : output?.applyFilter(named: filterType.rawValue, with: image) else { return }
         imageView.image = UIImage(cgImage: filteredImage)
-    }
-    
-    private func applyFilter(named filterName: String, with image: UIImage) -> CGImage? {
-        let context = CIContext(options: nil)
-        let ciImage = CIImage(image: image)
-        guard let filter = CIFilter(name: filterName) else { return nil }
-        filter.setValue(ciImage, forKey: kCIInputImageKey)
-        guard let outputImage = filter.outputImage else { return nil }
-        guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
-        return cgImage
     }
     
     private func setupZoomScrollView() {
@@ -132,7 +122,6 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     }
     
     private func setImage(_ image: UIImage) {
-        originalImage = image
         imageView.image = image
         imageView.sizeToFit()
         zoomScrollView.contentSize = imageView.bounds.size

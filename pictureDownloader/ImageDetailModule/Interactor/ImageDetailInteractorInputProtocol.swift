@@ -8,5 +8,5 @@
 import UIKit
 
 protocol ImageDetailInteractorInputProtocol: AnyObject {
-    func applyFilter(named filterName: String, with image: UIImage) -> CGImage?
+    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) -> UIImage?
 }

@@ -21,8 +21,8 @@ class ImageDetailPresenter: ImageDetailOutputProtocol{
         view?.setupUI(withImage: image)
     }
     
-    func applyFilter(named filterName: String, with image: UIImage) -> CGImage? {
-        return interactor?.applyFilter(named: filterName, with: image)
+    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) -> UIImage? {
+        return interactor?.applyFilter(named: filterName, with: image, intensity: intensity)
     }
     
     func didTapCloseButton() {

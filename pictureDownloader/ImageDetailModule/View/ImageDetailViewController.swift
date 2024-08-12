@@ -15,7 +15,11 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     private let filterScrollView = UIScrollView()
     private var imageView = UIImageView()
     private var closeButton = UIButton(type: .close)
+    private var slider = UISlider()
     
+    private var currentFilterName: String?
+    private var filterIntensities: [String: Float] = [:]
+    private var filterButtons: [UIButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +28,27 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     
     func setupUI(withImage image: UIImage) {
         setupZoomScrollView()
+        setupSlider()
         setupFilterScrollView()
         setupImageView()
         setImage(image)
         setupCloseButton()
+        view.backgroundColor = .systemGroupedBackground
+    }
+    
+    private func setupSlider() {
+        slider.minimumValue = 0.0
+        slider.maximumValue = 1.0
+        slider.value = 0.0
+        slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(slider)
+        NSLayoutConstraint.activate([
+            slider.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            slider.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            slider.topAnchor.constraint(equalTo: zoomScrollView.bottomAnchor),
+            slider.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     
     private func setupFilterScrollView() {
@@ -36,9 +57,9 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         view.addSubview(filterScrollView)
         
         NSLayoutConstraint.activate([
-            filterScrollView.leadingAnchor.constraint(equalTo: zoomScrollView.leadingAnchor),
-            filterScrollView.trailingAnchor.constraint(equalTo: zoomScrollView.trailingAnchor),
-            filterScrollView.topAnchor.constraint(equalTo: zoomScrollView.bottomAnchor),
+            filterScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            filterScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            filterScrollView.topAnchor.constraint(equalTo: slider.bottomAnchor),
             filterScrollView.heightAnchor.constraint(equalToConstant: 90)
         ])
         setupFilterButtons()
@@ -57,27 +78,50 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
             button.layer.cornerRadius = 25
             button.clipsToBounds = true
             filterScrollView.addSubview(button)
+            filterButtons.append(button)
             
             xOffset += button.frame.width + 10
             
             DispatchQueue.main.async {
                 guard let image = self.imageView.image else { return }
-                let filteredImage = filter == .original ? image.cgImage : self.output?.applyFilter(named: filter.rawValue, with: image)
-                if let cgImage = filteredImage {
-                    button.setBackgroundImage(UIImage(cgImage: cgImage), for: .normal)
-                }
+                let filteredImage = filter == .original ? image : self.output?.applyFilter(named: filter.rawValue, with: image, intensity: 0.5)
+                button.setBackgroundImage(filteredImage, for: .normal)
             }
         }
         filterScrollView.contentSize = CGSize(width: xOffset, height: 70)
     }
     
+    
     @objc private func filterButtonTapped(_ sender: UIButton) {
+        if let currentFilter = currentFilterName {
+            filterIntensities[currentFilter] = slider.value
+        }
         guard let filterName = sender.titleLabel?.text,
               let filterType = FilterTypes.allCases.first(where: { $0.description == filterName }) else { return }
         guard let image = imageView.image else { return }
         
-        guard let filteredImage = filterType == .original ? output?.getOriginalImage().cgImage : output?.applyFilter(named: filterType.rawValue, with: image) else { return }
-        imageView.image = UIImage(cgImage: filteredImage)
+        currentFilterName = filterType.rawValue
+        slider.value = filterIntensities[filterType.rawValue] ?? 0.0
+        
+        guard let filteredImage = filterType == .original ? output?.getOriginalImage() : output?.applyFilter(named: filterType.rawValue, with: image, intensity: slider.value) else { return }
+        imageView.image = filteredImage
+        
+        updateFilterButtonBorders(selectedButton: sender)
+    }
+    
+    private func updateFilterButtonBorders(selectedButton: UIButton) {
+        for button in filterButtons {
+            button.layer.borderColor = button == selectedButton ? UIColor.yellow.cgColor : nil
+            button.layer.borderWidth = button == selectedButton ? 2 : 0
+        }
+    }
+    
+    @objc private func sliderValueChanged(_ sender: UISlider) {
+        guard let filterName = currentFilterName,
+              let originalImage = output?.getOriginalImage() else { return }
+        
+        guard let filteredImage = output?.applyFilter(named: filterName, with: originalImage, intensity: slider.value) else { return }
+        imageView.image = filteredImage
     }
     
     private func setupZoomScrollView() {
@@ -116,8 +160,8 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         view.addSubview(closeButton)
         
         NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: zoomScrollView.topAnchor, constant: 5),
-            closeButton.trailingAnchor.constraint(equalTo: zoomScrollView.trailingAnchor, constant: -5)
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            closeButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5)
         ])
     }
     
@@ -128,8 +172,8 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
 
         let imageWidth = image.size.width
         let imageHeight = image.size.height
-        let maxWidth = view.bounds.width - 40
-        let maxHeight = view.bounds.height - 40
+        let maxWidth = view.bounds.width
+        let maxHeight = view.bounds.height
         let widthRatio = maxWidth / imageWidth
         let heightRatio = maxHeight / imageHeight
         let scale = min(widthRatio, heightRatio)

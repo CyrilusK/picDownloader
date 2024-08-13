@@ -17,9 +17,6 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     private var closeButton = UIButton(type: .close)
     private var slider = UISlider()
     private var filterSwitch = UISwitch()
-    
-    private var currentFilterName: String?
-    private var filterIntensities: [String: Float] = [:]
     private var filterButtons: [UIButton] = []
     
     override func viewDidLoad() {
@@ -106,52 +103,6 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         filterScrollView.contentSize = CGSize(width: xOffset, height: 70)
     }
     
-    
-    @objc private func filterButtonTapped(_ sender: UIButton) {
-        guard let filterName = sender.titleLabel?.text,
-              let filterType = FilterTypes.allCases.first(where: { $0.description == filterName }) else { return }
-        
-        currentFilterName = filterType.rawValue
-        slider.value = filterIntensities[filterType.rawValue] ?? 0.0
-        slider.isHidden = filterType.unsupportsIntensity
-        filterSwitch.isHidden = !filterType.unsupportsIntensity
-        filterSwitch.isOn = filterIntensities[filterType.rawValue] == 1.0
-        
-        if filterType == .original {
-            imageView.image = output?.getOriginalImage()
-            filterSwitch.isHidden = true
-            filterIntensities.removeAll()
-        }
-        updateFilterButtonBorders(selectedButton: sender)
-    }
-    
-    private func updateFilterButtonBorders(selectedButton: UIButton) {
-        for button in filterButtons {
-            button.layer.borderColor = button == selectedButton ? UIColor.yellow.cgColor : nil
-            button.layer.borderWidth = button == selectedButton ? 2 : 0
-        }
-    }
-    
-    @objc private func sliderValueChanged(_ sender: UISlider) {
-        guard let filterName = currentFilterName else { return }
-        filterIntensities[filterName] = slider.value
-        applyAllFilters()
-    }
-    
-    @objc private func filterSwitchValueChanged(_ sender: UISwitch) {
-        guard let filterName = currentFilterName else { return }
-        filterIntensities[filterName] = filterSwitch.isOn ? 1.0 : 0.0
-        applyAllFilters()
-    }
-    
-    private func applyAllFilters() {
-        guard var processedImage = output?.getOriginalImage() else { return }
-        for (filterName, intensity) in filterIntensities where intensity > 0.0 {
-            processedImage = output?.applyFilter(named: filterName, with: processedImage, intensity: intensity) ?? processedImage
-        }
-        imageView.image = processedImage
-    }
-    
     private func setupZoomScrollView() {
         zoomScrollView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
         zoomScrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -193,6 +144,43 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         ])
     }
     
+    @objc private func filterButtonTapped(_ sender: UIButton) {
+        guard let filterName = sender.titleLabel?.text else { return }
+        output?.filterButtonTapped(filterName)
+        updateFilterButtonBorders(selectedButton: sender)
+    }
+    
+    func updateFilterControls(for filter: FilterTypes) {
+        guard let currentValue = output?.getValueCurrentFilterIntensities() else { return }
+        slider.value = currentValue
+        slider.isHidden = filter.unsupportsIntensity
+        filterSwitch.isHidden = !filter.unsupportsIntensity
+        filterSwitch.isOn = currentValue == 1.0
+    }
+    
+    func hideSwitch() {
+        filterSwitch.isHidden = true
+    }
+
+    func updateImageView(with image: UIImage) {
+        imageView.image = image
+    }
+    
+    private func updateFilterButtonBorders(selectedButton: UIButton) {
+        for button in filterButtons {
+            button.layer.borderColor = button == selectedButton ? UIColor.yellow.cgColor : nil
+            button.layer.borderWidth = button == selectedButton ? 2 : 0
+        }
+    }
+    
+    @objc private func sliderValueChanged(_ sender: UISlider) {
+        output?.sliderValueChanged(sender.value)
+    }
+    
+    @objc private func filterSwitchValueChanged(_ sender: UISwitch) {
+        output?.filterSwitchValueChanged(sender.isOn)
+    }
+    
     private func setImage(_ image: UIImage) {
         imageView.image = image
         imageView.sizeToFit()
@@ -206,8 +194,8 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         let heightRatio = maxHeight / imageHeight
         let scale = min(widthRatio, heightRatio)
 
-        let newWidth = imageWidth
-        let newHeight = imageHeight
+        let newWidth = imageWidth * scale
+        let newHeight = imageHeight * scale
 
         NSLayoutConstraint.activate([
             zoomScrollView.widthAnchor.constraint(equalToConstant: newWidth),

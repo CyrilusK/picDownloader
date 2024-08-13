@@ -43,6 +43,7 @@
 		A5BCE39F2C6399D4004BE4A8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE39E2C6399D4004BE4A8 /* NotificationManager.swift */; };
 		A5BCE3A22C667DB3004BE4A8 /* ImageDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A12C667DB3004BE4A8 /* ImageDetailInteractor.swift */; };
 		A5BCE3A42C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A32C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift */; };
+		A5BCE3A62C6BC760004BE4A8 /* ImageEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A52C6BC760004BE4A8 /* ImageEditor.swift */; };
 		A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D262C45075A00AF032B /* AppDelegate.swift */; };
 		A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D282C45075A00AF032B /* SceneDelegate.swift */; };
 		A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */; };
@@ -99,6 +100,7 @@
 		A5BCE39E2C6399D4004BE4A8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A5BCE3A12C667DB3004BE4A8 /* ImageDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailInteractor.swift; sourceTree = "<group>"; };
 		A5BCE3A32C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		A5BCE3A52C6BC760004BE4A8 /* ImageEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditor.swift; sourceTree = "<group>"; };
 		A5CB6D232C45075A00AF032B /* pictureDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictureDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB6D262C45075A00AF032B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D282C45075A00AF032B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				A5BCE3212C4AAD15004BE4A8 /* ManagerProtocols.swift */,
 				A5BCE39C2C622884004BE4A8 /* DeepLinkHandler.swift */,
 				A5BCE39E2C6399D4004BE4A8 /* NotificationManager.swift */,
+				A5BCE3A52C6BC760004BE4A8 /* ImageEditor.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				A5CB6D522C45419700AF032B /* TabbarController.swift in Sources */,
 				A5BCE34C2C53A396004BE4A8 /* ImageDetailViewController.swift in Sources */,
 				A5CB6D6E2C4685DE00AF032B /* TabbarConfigurator.swift in Sources */,
+				A5BCE3A62C6BC760004BE4A8 /* ImageEditor.swift in Sources */,
 				A5BCE3332C4E8F78004BE4A8 /* DownloaderPresenterProtocol.swift in Sources */,
 				A5BCE3312C4E8F4F004BE4A8 /* DownloaderViewProtocol.swift in Sources */,
 				A5BCE3992C621B05004BE4A8 /* TabbarInteractor.swift in Sources */,

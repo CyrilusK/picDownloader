@@ -12,4 +12,8 @@ protocol ImageDetailOutputProtocol: AnyObject {
     func didTapCloseButton()
     func applyFilter(named filterName: String, with image: UIImage, intensity: Float) -> UIImage?
     func getOriginalImage() -> UIImage
+    func filterButtonTapped(_ filterName: String)
+    func getValueCurrentFilterIntensities() -> Float
+    func sliderValueChanged(_ value: Float)
+    func filterSwitchValueChanged(_ isOn: Bool)
 }

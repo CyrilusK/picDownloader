@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageDetailRouter: ImageDetailRouterInputProtocol {
+final class ImageDetailRouter: ImageDetailRouterInputProtocol {
     weak var viewController: UIViewController?
     
     func dismiss() {

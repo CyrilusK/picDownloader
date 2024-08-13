@@ -9,4 +9,7 @@ import UIKit
 
 protocol ImageDetailViewInputProtocol: AnyObject {
     func setupUI(withImage image: UIImage)
+    func updateImageView(with image: UIImage)
+    func updateFilterControls(for filter: FilterTypes)
+    func hideSwitch()
 }

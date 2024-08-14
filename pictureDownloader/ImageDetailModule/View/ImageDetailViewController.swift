@@ -19,6 +19,9 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     private var filterSwitch = UISwitch()
     private var filterButtons: [UIButton] = []
     
+    private var portraitConstraints: [NSLayoutConstraint] = []
+    private var landscapeConstraints: [NSLayoutConstraint] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewDidLoad()
@@ -32,6 +35,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         setImage(image)
         setupCloseButton()
         setupFilterSwitch()
+        applyPortraitConstraints()
         view.backgroundColor = .systemGroupedBackground
     }
     
@@ -43,12 +47,6 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
         slider.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(slider)
-        NSLayoutConstraint.activate([
-            slider.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            slider.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            slider.topAnchor.constraint(equalTo: zoomScrollView.bottomAnchor),
-            slider.heightAnchor.constraint(equalToConstant: 50)
-        ])
     }
     
     private func setupFilterSwitch() {
@@ -56,43 +54,47 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         filterSwitch.addTarget(self, action: #selector(filterSwitchValueChanged), for: .valueChanged)
         filterSwitch.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(filterSwitch)
-        NSLayoutConstraint.activate([
-            filterSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            filterSwitch.topAnchor.constraint(equalTo: zoomScrollView.bottomAnchor, constant: 10),
-            filterSwitch.heightAnchor.constraint(equalToConstant: 50)
-        ])
     }
     
     private func setupFilterScrollView() {
+        filterScrollView.showsVerticalScrollIndicator = false
         filterScrollView.showsHorizontalScrollIndicator = false
         filterScrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(filterScrollView)
-        
-        NSLayoutConstraint.activate([
-            filterScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            filterScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            filterScrollView.topAnchor.constraint(equalTo: slider.bottomAnchor),
-            filterScrollView.heightAnchor.constraint(equalToConstant: 90)
-        ])
         setupFilterButtons()
     }
     
-    private func setupFilterButtons() {
+    func setupFilterButtons() {
+        for button in filterButtons {
+            button.removeFromSuperview()
+        }
+        filterButtons.removeAll()
+        
         var xOffset: CGFloat = 10.0
+        var yOffset: CGFloat = 10.0
+        let buttonSize: CGFloat = 70.0
         
         for filter in FilterTypes.allCases {
             let button = UIButton(type: .system)
             button.setTitle(filter.description, for: .normal)
             button.setTitleColor(.white, for: .normal)
             button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
-            button.frame = CGRect(x: xOffset, y: 10, width: 70, height: 70)
+            switch UIDevice.current.orientation {
+            case .portrait:
+                button.frame = CGRect(x: xOffset, y: 10, width: buttonSize, height: buttonSize)
+                xOffset += buttonSize + 10
+            case .landscapeLeft, .portraitUpsideDown, .landscapeRight:
+                button.frame = CGRect(x: 10, y: yOffset, width: buttonSize, height: buttonSize)
+                yOffset += buttonSize + 10
+            default:
+                button.frame = CGRect(x: xOffset, y: 10, width: buttonSize, height: buttonSize)
+                xOffset += buttonSize + 10
+            }
             button.imageView?.contentMode = .scaleAspectFill
             button.layer.cornerRadius = 25
             button.clipsToBounds = true
             filterScrollView.addSubview(button)
             filterButtons.append(button)
-            
-            xOffset += button.frame.width + 10
             
             DispatchQueue.main.async {
                 guard let image = self.output?.getOriginalImage() else { return }
@@ -100,7 +102,14 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
                 button.setBackgroundImage(filteredImage, for: .normal)
             }
         }
-        filterScrollView.contentSize = CGSize(width: xOffset, height: 70)
+        switch UIDevice.current.orientation {
+        case .portrait:
+            filterScrollView.contentSize = CGSize(width: xOffset, height: buttonSize)
+        case .landscapeLeft, .landscapeRight, .portraitUpsideDown:
+            filterScrollView.contentSize = CGSize(width: buttonSize, height: yOffset)
+        default:
+            filterScrollView.contentSize = CGSize(width: xOffset, height: buttonSize)
+        }
     }
     
     private func setupZoomScrollView() {
@@ -113,7 +122,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         
         NSLayoutConstraint.activate([
             zoomScrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            zoomScrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            zoomScrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
         ])
     }
     
@@ -205,6 +214,80 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     
     @objc private func closeButtonTapped() {
         output?.didTapCloseButton()
+    }
+    
+    private func applyPortraitConstraints() {
+        portraitConstraints = [
+            filterScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            filterScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            filterScrollView.topAnchor.constraint(equalTo: zoomScrollView.bottomAnchor),
+            filterScrollView.heightAnchor.constraint(equalToConstant: 90),
+            
+            slider.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            slider.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            slider.topAnchor.constraint(equalTo: filterScrollView.bottomAnchor),
+            slider.heightAnchor.constraint(equalToConstant: 50),
+            
+            filterSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            filterSwitch.topAnchor.constraint(equalTo: filterScrollView.bottomAnchor, constant: 10),
+            filterSwitch.heightAnchor.constraint(equalToConstant: 50)
+        ]
+        NSLayoutConstraint.activate(portraitConstraints)
+        filterScrollView.alwaysBounceVertical = false
+        filterScrollView.alwaysBounceHorizontal = true
+        slider.transform = .identity
+    }
+    
+    private func applyLandscapeConstraints(width: CGFloat) {
+        landscapeConstraints = [
+            filterScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25),
+            filterScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            filterScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            filterScrollView.widthAnchor.constraint(equalToConstant: 90),
+            
+            slider.widthAnchor.constraint(equalToConstant: width),
+            slider.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            slider.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            
+            filterSwitch.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            filterSwitch.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            filterSwitch.heightAnchor.constraint(equalToConstant: 50)
+            
+        ]
+        NSLayoutConstraint.activate(landscapeConstraints)
+        filterScrollView.alwaysBounceVertical = true
+        filterScrollView.alwaysBounceHorizontal = false
+        slider.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        orientationDidChange()
+    }
+    
+    private func orientationDidChange() {
+        let currentOrientation = UIDevice.current.orientation
+//        let size = view.bounds.size
+//        output?.didChangeOrientation(currentOrientation, size: size)
+        NSLayoutConstraint.deactivate(portraitConstraints + landscapeConstraints)
+
+        switch currentOrientation {
+        case .portrait:
+            filterScrollView.alwaysBounceVertical = false
+            filterScrollView.alwaysBounceHorizontal = true
+            applyPortraitConstraints()
+        case .landscapeLeft, .portraitUpsideDown:
+            filterScrollView.alwaysBounceVertical = true
+            filterScrollView.alwaysBounceHorizontal = false
+            applyLandscapeConstraints(width: view.bounds.height - 40)
+        case .landscapeRight:
+            filterScrollView.alwaysBounceVertical = true
+            filterScrollView.alwaysBounceHorizontal = false
+            applyLandscapeConstraints(width: view.bounds.width - 40)
+        default:
+            break
+        }
+        setupFilterButtons()
     }
 }
 

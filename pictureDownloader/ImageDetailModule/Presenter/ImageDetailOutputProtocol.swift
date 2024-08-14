@@ -16,4 +16,5 @@ protocol ImageDetailOutputProtocol: AnyObject {
     func getValueCurrentFilterIntensities() -> Float
     func sliderValueChanged(_ value: Float)
     func filterSwitchValueChanged(_ isOn: Bool)
+//    func didChangeOrientation(_ orientation: UIDeviceOrientation, size: CGSize)
 }

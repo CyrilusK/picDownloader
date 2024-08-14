@@ -72,4 +72,20 @@ final class ImageDetailPresenter: ImageDetailOutputProtocol{
         }
         view?.updateImageView(with: processedImage)
     }
+    
+//    func didChangeOrientation(_ orientation: UIDeviceOrientation, size: CGSize) {
+//        switch orientation {
+//        case .portrait:
+//            view?.applyPortraitConstraints()
+//            view?.setupFilterButtons()
+//        case .landscapeLeft, .portraitUpsideDown:
+//            view?.applyLandscapeConstraints(width: size.height - 40)
+//            view?.setupFilterButtons()
+//        case .landscapeRight:
+//            view?.applyLandscapeConstraints(width: size.width - 40)
+//            view?.setupFilterButtons()
+//        default:
+//            break
+//        }
+//    }
 }

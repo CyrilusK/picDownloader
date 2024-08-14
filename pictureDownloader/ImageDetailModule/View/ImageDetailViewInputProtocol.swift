@@ -12,4 +12,7 @@ protocol ImageDetailViewInputProtocol: AnyObject {
     func updateImageView(with image: UIImage)
     func updateFilterControls(for filter: FilterTypes)
     func hideSwitch()
+//    func applyPortraitConstraints()
+//    func applyLandscapeConstraints(width: CGFloat)
+//    func setupFilterButtons()
 }

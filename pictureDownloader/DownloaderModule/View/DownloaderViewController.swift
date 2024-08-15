@@ -17,6 +17,11 @@ final class DownloaderViewController: UIViewController, DownloaderViewInputProto
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColorUI), name: .themeChanged, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .themeChanged, object: nil)
     }
     
     private func setupButton() {
@@ -47,7 +52,6 @@ final class DownloaderViewController: UIViewController, DownloaderViewInputProto
     private func setupUrlTextField() {
         urlTextField.placeholder = " Введите url"
         urlTextField.layer.borderWidth = 1.0
-        urlTextField.layer.borderColor = UIColor.gray.cgColor
         urlTextField.layer.cornerRadius = 5.0
         urlTextField.autocapitalizationType = .none
         urlTextField.autocorrectionType = .no
@@ -66,10 +70,17 @@ final class DownloaderViewController: UIViewController, DownloaderViewInputProto
     }
     
     func setupView() {
-        view.backgroundColor = .systemGroupedBackground
         setupUrlTextField()
         setupImageView()
         setupButton()
+        updateColorUI()
+    }
+    
+    @objc private func updateColorUI() {
+        let settings = ThemeManager.shared.getTheme().settings
+        view.backgroundColor = settings.backgroundColor
+        urlTextField.layer.borderColor = settings.tintColor.cgColor
+        searchButton.tintColor = settings.tintColor
     }
     
     @objc

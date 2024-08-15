@@ -25,7 +25,7 @@ final class TabbarConfigurator: TabbarConfiguratorProtocol {
     
     private func setupTabs(for tabBar: TabbarController) {
         tabBar.selectedIndex = 0
-        tabBar.tabBar.tintColor = UIColor.blue
+        tabBar.tabBar.tintColor = ThemeManager.shared.getTheme().settings.tintColor
         tabBar.extendedLayoutIncludesOpaqueBars = true
         
         let imageStorage = ImageStorage(imageEncryptor: ImageEncryptor())
@@ -39,9 +39,15 @@ final class TabbarConfigurator: TabbarConfiguratorProtocol {
         imageBarItem.image = UIImage(systemName: "plus.magnifyingglass")
         imageVC.tabBarItem = imageBarItem
         
+        let settingsVC = SettingsConfigurator().configure()
+        let settingsBarItem = UITabBarItem()
+        settingsBarItem.image = UIImage(systemName: "gear")
+        settingsVC.tabBarItem = settingsBarItem
+        
         tabBar.viewControllers = [
             imageVC,
-            gridSavedVC
+            gridSavedVC,
+            settingsVC
         ]
     }
 }

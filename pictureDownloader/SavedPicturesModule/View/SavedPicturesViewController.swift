@@ -24,21 +24,33 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
         super.viewDidLoad()
         output?.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(imageDownloaded), name: .imageDownloaded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColorUI), name: .themeChanged, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .imageDownloaded, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .themeChanged, object: nil)
     }
     
     @objc private func imageDownloaded() {
         output?.reloadImages()
     }
     
+    @objc private func updateColorUI() {
+        let settings = ThemeManager.shared.getTheme().settings
+        gridOrCarouselCollectionView.backgroundColor = settings.backgroundColor
+        floatingButton.backgroundColor = settings.tintColor.withAlphaComponent(0.3)
+    }
+    
     func setupUI() {
         setupCollectionView()
         setupFloatingButton()
+        updateColorUI()
     }
     
     private func setupCollectionView() {
         view.addSubview(gridOrCarouselCollectionView)
         gridOrCarouselCollectionView.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             gridOrCarouselCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             gridOrCarouselCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -47,8 +59,6 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
         ])
 
         gridOrCarouselCollectionView.register(SavedPictureCell.self, forCellWithReuseIdentifier: Constants.reuseIdentifier)
-        gridOrCarouselCollectionView.backgroundColor = .systemGroupedBackground
-        view.backgroundColor = .systemGroupedBackground
     }
     
     func reloadData() {
@@ -58,7 +68,6 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     private func setupFloatingButton() {
         floatingButton.setImage(UIImage(systemName: "square.stack.fill"), for: .normal)
         floatingButton.addTarget(self, action: #selector(toggleViewMode), for: .touchUpInside)
-        floatingButton.backgroundColor = UIColor.blue.withAlphaComponent(0.3)
         floatingButton.tintColor = .white
         floatingButton.layer.cornerRadius = 25
         floatingButton.translatesAutoresizingMaskIntoConstraints = false

@@ -44,6 +44,12 @@
 		A5BCE3A22C667DB3004BE4A8 /* ImageDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A12C667DB3004BE4A8 /* ImageDetailInteractor.swift */; };
 		A5BCE3A42C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A32C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift */; };
 		A5BCE3A62C6BC760004BE4A8 /* ImageEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A52C6BC760004BE4A8 /* ImageEditor.swift */; };
+		A5BCE3A82C6E08DE004BE4A8 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3A72C6E08DE004BE4A8 /* ThemeManager.swift */; };
+		A5BCE3B02C6E1428004BE4A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3AF2C6E1428004BE4A8 /* SettingsViewController.swift */; };
+		A5BCE3B22C6E9BCB004BE4A8 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3B12C6E9BCB004BE4A8 /* SettingsPresenter.swift */; };
+		A5BCE3B42C6E9BDD004BE4A8 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3B32C6E9BDD004BE4A8 /* SettingsConfigurator.swift */; };
+		A5BCE3B62C6E9CA7004BE4A8 /* SettingsOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3B52C6E9CA7004BE4A8 /* SettingsOutputProtocol.swift */; };
+		A5BCE3B82C6E9CD4004BE4A8 /* SettingsViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCE3B72C6E9CD4004BE4A8 /* SettingsViewInputProtocol.swift */; };
 		A5CB6D272C45075A00AF032B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D262C45075A00AF032B /* AppDelegate.swift */; };
 		A5CB6D292C45075A00AF032B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D282C45075A00AF032B /* SceneDelegate.swift */; };
 		A5CB6D2B2C45075A00AF032B /* DownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6D2A2C45075A00AF032B /* DownloaderViewController.swift */; };
@@ -101,6 +107,12 @@
 		A5BCE3A12C667DB3004BE4A8 /* ImageDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailInteractor.swift; sourceTree = "<group>"; };
 		A5BCE3A32C667E9A004BE4A8 /* ImageDetailInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		A5BCE3A52C6BC760004BE4A8 /* ImageEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditor.swift; sourceTree = "<group>"; };
+		A5BCE3A72C6E08DE004BE4A8 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		A5BCE3AF2C6E1428004BE4A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A5BCE3B12C6E9BCB004BE4A8 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		A5BCE3B32C6E9BDD004BE4A8 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
+		A5BCE3B52C6E9CA7004BE4A8 /* SettingsOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOutputProtocol.swift; sourceTree = "<group>"; };
+		A5BCE3B72C6E9CD4004BE4A8 /* SettingsViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewInputProtocol.swift; sourceTree = "<group>"; };
 		A5CB6D232C45075A00AF032B /* pictureDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictureDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB6D262C45075A00AF032B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CB6D282C45075A00AF032B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +156,7 @@
 				A5BCE39C2C622884004BE4A8 /* DeepLinkHandler.swift */,
 				A5BCE39E2C6399D4004BE4A8 /* NotificationManager.swift */,
 				A5BCE3A52C6BC760004BE4A8 /* ImageEditor.swift */,
+				A5BCE3A72C6E08DE004BE4A8 /* ThemeManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -231,6 +244,42 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		A5BCE3A92C6E125B004BE4A8 /* SettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3AE2C6E13C1004BE4A8 /* Configurator */,
+				A5BCE3AD2C6E13B2004BE4A8 /* Presenter */,
+				A5BCE3AC2C6E13AA004BE4A8 /* View */,
+			);
+			path = SettingsModule;
+			sourceTree = "<group>";
+		};
+		A5BCE3AC2C6E13AA004BE4A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3AF2C6E1428004BE4A8 /* SettingsViewController.swift */,
+				A5BCE3B72C6E9CD4004BE4A8 /* SettingsViewInputProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5BCE3AD2C6E13B2004BE4A8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3B12C6E9BCB004BE4A8 /* SettingsPresenter.swift */,
+				A5BCE3B52C6E9CA7004BE4A8 /* SettingsOutputProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A5BCE3AE2C6E13C1004BE4A8 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A5BCE3B32C6E9BDD004BE4A8 /* SettingsConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		A5CB6D1A2C45075A00AF032B = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				A5BCE31C2C4822BF004BE4A8 /* Managers */,
+				A5BCE3A92C6E125B004BE4A8 /* SettingsModule */,
 				A5CB6D4C2C453F5B00AF032B /* TabBarModule */,
 				A5BCE3452C53A2AD004BE4A8 /* ImageDetailModule */,
 				A5CB6D3D2C450D2300AF032B /* SavedPicturesModule */,
@@ -467,6 +517,7 @@
 			files = (
 				A5BCE35E2C57CF95004BE4A8 /* CarouselFlowLayout.swift in Sources */,
 				A5BCE3202C4AA6BD004BE4A8 /* ImageStorage.swift in Sources */,
+				A5BCE3B82C6E9CD4004BE4A8 /* SettingsViewInputProtocol.swift in Sources */,
 				A5CB6D662C4584D000AF032B /* SavedPicturesConfigurator.swift in Sources */,
 				A5BCE3A22C667DB3004BE4A8 /* ImageDetailInteractor.swift in Sources */,
 				A5BCE32B2C4E8CDA004BE4A8 /* SavedPicturesInteractorProtocol.swift in Sources */,
@@ -490,9 +541,12 @@
 				A5BCE3932C610FBD004BE4A8 /* TabbarPresenter.swift in Sources */,
 				A5BCE33B2C4FB3F9004BE4A8 /* SavedPictureCell.swift in Sources */,
 				A5BCE3442C53A217004BE4A8 /* SavedPicturesRouter.swift in Sources */,
+				A5BCE3B42C6E9BDD004BE4A8 /* SettingsConfigurator.swift in Sources */,
+				A5BCE3A82C6E08DE004BE4A8 /* ThemeManager.swift in Sources */,
 				A5BCE32D2C4E8E7E004BE4A8 /* TabbarViewProtocol.swift in Sources */,
 				A5BCE3252C4E8C0A004BE4A8 /* SavedPicturesConfiguratorProtocol.swift in Sources */,
 				A5BCE3352C4E8FBF004BE4A8 /* DownloaderInteractorProtocol.swift in Sources */,
+				A5BCE3B22C6E9BCB004BE4A8 /* SettingsPresenter.swift in Sources */,
 				A5BCE32F2C4E8E9C004BE4A8 /* TabbarConfiguratorProtocol.swift in Sources */,
 				A5BCE35A2C53E093004BE4A8 /* ImageDetailViewInputProtocol.swift in Sources */,
 				A5CB6D632C45842900AF032B /* SavedPicturesInteractor.swift in Sources */,
@@ -503,6 +557,7 @@
 				A5BCE3392C4EB104004BE4A8 /* DownloaderTextFieldDelegate.swift in Sources */,
 				A5BCE3272C4E8C3F004BE4A8 /* SavedPicturesViewProtocol.swift in Sources */,
 				A5BCE3222C4AAD15004BE4A8 /* ManagerProtocols.swift in Sources */,
+				A5BCE3B62C6E9CA7004BE4A8 /* SettingsOutputProtocol.swift in Sources */,
 				A5BCE3292C4E8CA4004BE4A8 /* SavedPicturesPresenterProtocol.swift in Sources */,
 				A5BCE34E2C53A44B004BE4A8 /* ImageDetailConfigurator.swift in Sources */,
 				A5BCE3542C53DB9B004BE4A8 /* ImageDetailOutputProtocol.swift in Sources */,
@@ -517,6 +572,7 @@
 				A5BCE39F2C6399D4004BE4A8 /* NotificationManager.swift in Sources */,
 				A5BCE3412C52AA49004BE4A8 /* Extension.swift in Sources */,
 				A5CB6D552C4543D900AF032B /* SavedPicturesViewController.swift in Sources */,
+				A5BCE3B02C6E1428004BE4A8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

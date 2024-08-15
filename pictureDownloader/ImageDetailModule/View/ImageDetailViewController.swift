@@ -11,12 +11,12 @@ import CoreImage
 final class ImageDetailViewController: UIViewController, ImageDetailViewInputProtocol {
     var output: ImageDetailOutputProtocol?
     
-    private var zoomScrollView = UIScrollView()
+    private let zoomScrollView = UIScrollView()
     private let filterScrollView = UIScrollView()
-    private var imageView = UIImageView()
-    private var closeButton = UIButton(type: .close)
-    private var slider = UISlider()
-    private var filterSwitch = UISwitch()
+    private let imageView = UIImageView()
+    private let closeButton = UIButton(type: .close)
+    private let slider = UISlider()
+    private let filterSwitch = UISwitch()
     private var filterButtons: [UIButton] = []
     
     private var portraitConstraints: [NSLayoutConstraint] = []
@@ -36,13 +36,14 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         setupCloseButton()
         setupFilterSwitch()
         applyPortraitConstraints()
-        view.backgroundColor = .systemGroupedBackground
+        view.backgroundColor = ThemeManager.shared.getTheme().settings.backgroundColor
     }
     
     private func setupSlider() {
         slider.minimumValue = 0.0
         slider.maximumValue = 1.0
         slider.value = 0.0
+        slider.tintColor = ThemeManager.shared.getTheme().settings.tintColor
         slider.isHidden = true
         slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
         slider.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +51,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     }
     
     private func setupFilterSwitch() {
+        filterSwitch.onTintColor = ThemeManager.shared.getTheme().settings.tintColor
         filterSwitch.isHidden = true
         filterSwitch.addTarget(self, action: #selector(filterSwitchValueChanged), for: .valueChanged)
         filterSwitch.translatesAutoresizingMaskIntoConstraints = false
@@ -142,7 +144,6 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     }
     
     private func setupCloseButton() {
-        closeButton.setTitleColor(.red, for: .normal)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.addSubview(closeButton)
@@ -177,7 +178,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     
     private func updateFilterButtonBorders(selectedButton: UIButton) {
         for button in filterButtons {
-            button.layer.borderColor = button == selectedButton ? UIColor.yellow.cgColor : nil
+            button.layer.borderColor = button == selectedButton ? ThemeManager.shared.getTheme().settings.tintColor.cgColor : nil
             button.layer.borderWidth = button == selectedButton ? 2 : 0
         }
     }

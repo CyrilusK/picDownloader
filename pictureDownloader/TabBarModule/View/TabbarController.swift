@@ -13,6 +13,11 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColorUI), name: .themeChanged, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .themeChanged, object: nil)
     }
     
     func handleDeepLink(_ deeplink: DeepLink) {
@@ -46,5 +51,9 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         errorAlert.addAction(okAction)
         present(errorAlert, animated: true)
+    }
+    
+    @objc private func updateColorUI() {
+        tabBar.tintColor = ThemeManager.shared.getTheme().settings.tintColor
     }
 }

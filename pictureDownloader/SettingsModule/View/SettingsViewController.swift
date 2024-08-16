@@ -9,7 +9,8 @@ import UIKit
 
 final class SettingsViewController: UIViewController, SettingsViewInputProtocol {
     var output: SettingsOutputProtocol?
-    private var themeButtons: [UIButton] = []
+    var themeButtons: [UIButton] = []
+    private let themeManager = ThemeManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,11 +64,11 @@ final class SettingsViewController: UIViewController, SettingsViewInputProtocol 
         return button
     }
     
-    private func updateButtonStyle(selectedButton: UIButton) {
+    func updateButtonStyle(selectedButton: UIButton) {
         for button in themeButtons {
             if button == selectedButton {
                 button.layer.borderWidth = 1.5
-                button.layer.shadowColor = ThemeManager.shared.getTheme().settings.tintColor.cgColor
+                button.layer.shadowColor = themeManager.getTheme().settings.tintColor.cgColor
             } else {
                 button.layer.borderWidth = 0.1
                 button.layer.shadowOpacity = 0.0
@@ -77,38 +78,29 @@ final class SettingsViewController: UIViewController, SettingsViewInputProtocol 
     }
     
     @objc private func selectBlueTheme(_ sender: UIButton) {
-        ThemeManager.shared.setTheme(.blue)
+        themeManager.setTheme(.blue)
         updateButtonStyle(selectedButton: sender)
     }
     
     @objc private func selectRedTheme(_ sender: UIButton) {
-        ThemeManager.shared.setTheme(.red)
+        themeManager.setTheme(.red)
         updateButtonStyle(selectedButton: sender)
     }
     
     @objc private func selectGreenTheme(_ sender: UIButton) {
-        ThemeManager.shared.setTheme(.green)
+        themeManager.setTheme(.green)
         updateButtonStyle(selectedButton: sender)
     }
     
     @objc private func selectSystemTheme(_ sender: UIButton) {
-        ThemeManager.shared.setTheme(.system)
+        themeManager.setTheme(.system)
         updateButtonStyle(selectedButton: sender)
     }
     
     @objc private func updateTheme() {
-        let currentTheme = ThemeManager.shared.getTheme()
+        let currentTheme = themeManager.getTheme()
         view.backgroundColor = currentTheme.settings.backgroundColor
-        switch currentTheme {
-        case .blue:
-            updateButtonStyle(selectedButton: themeButtons[0])
-        case .red:
-            updateButtonStyle(selectedButton: themeButtons[1])
-        case .green:
-            updateButtonStyle(selectedButton: themeButtons[2])
-        case .system:
-            updateButtonStyle(selectedButton: themeButtons[3])
-        }
+        output?.highlightButtonForCurrentTheme(current: currentTheme)
     }
 }
 

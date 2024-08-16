@@ -2176,8 +2176,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
             endingLineNumber = "188"
-            landmarkName = "ImageDetailViewController"
-            landmarkType = "3">
+            landmarkName = "sliderValueChanged(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "4A2B4F23-7992-4ABD-8B3F-B03F91A14EF8 - 47d7f9010922c59b"
@@ -3429,8 +3429,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "262"
             endingLineNumber = "262"
-            landmarkName = "ImageDetailViewController"
-            landmarkType = "3">
+            landmarkName = "applyLandscapeConstraints(width:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

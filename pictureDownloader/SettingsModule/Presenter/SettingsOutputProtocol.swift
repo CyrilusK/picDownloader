@@ -9,4 +9,5 @@ import UIKit
 
 protocol SettingsOutputProtocol {
     func viewDidLoad()
+    func highlightButtonForCurrentTheme(current: Theme)
 }

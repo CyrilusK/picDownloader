@@ -12,7 +12,7 @@ struct ThemeSettings {
     let tintColor: UIColor
     
     static let blueTheme = ThemeSettings(backgroundColor: .systemBlue, tintColor: .orange)
-    static let redTheme = ThemeSettings(backgroundColor: .systemRed, tintColor: .white)
+    static let redTheme = ThemeSettings(backgroundColor: .systemRed, tintColor: .yellow)
     static let greenTheme = ThemeSettings(backgroundColor: .systemGreen, tintColor: .blue)
     static let systemTheme = ThemeSettings(backgroundColor: .systemGroupedBackground, tintColor: .black)
 }
@@ -37,7 +37,6 @@ enum Theme: String {
 }
 
 final class ThemeManager {
-    static let shared = ThemeManager()
     private var currentTheme: Theme {
         get {
             if let savedTheme = UserDefaults.standard.string(forKey: Notification.Name.themeChanged.rawValue),

@@ -54,6 +54,6 @@ final class TabbarController: UITabBarController, TabbarViewProtocol {
     }
     
     @objc private func updateColorUI() {
-        tabBar.tintColor = ThemeManager.shared.getTheme().settings.tintColor
+        tabBar.tintColor = ThemeManager().getTheme().settings.tintColor
     }
 }

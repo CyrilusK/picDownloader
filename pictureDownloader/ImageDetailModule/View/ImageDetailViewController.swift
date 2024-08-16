@@ -36,14 +36,14 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         setupCloseButton()
         setupFilterSwitch()
         applyPortraitConstraints()
-        view.backgroundColor = ThemeManager.shared.getTheme().settings.backgroundColor
+        view.backgroundColor = ThemeManager().getTheme().settings.backgroundColor
     }
     
     private func setupSlider() {
         slider.minimumValue = 0.0
         slider.maximumValue = 1.0
         slider.value = 0.0
-        slider.tintColor = ThemeManager.shared.getTheme().settings.tintColor
+        slider.tintColor = ThemeManager().getTheme().settings.tintColor
         slider.isHidden = true
         slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
         slider.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     }
     
     private func setupFilterSwitch() {
-        filterSwitch.onTintColor = ThemeManager.shared.getTheme().settings.tintColor
+        filterSwitch.onTintColor = ThemeManager().getTheme().settings.tintColor
         filterSwitch.isHidden = true
         filterSwitch.addTarget(self, action: #selector(filterSwitchValueChanged), for: .valueChanged)
         filterSwitch.translatesAutoresizingMaskIntoConstraints = false
@@ -178,7 +178,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     
     private func updateFilterButtonBorders(selectedButton: UIButton) {
         for button in filterButtons {
-            button.layer.borderColor = button == selectedButton ? ThemeManager.shared.getTheme().settings.tintColor.cgColor : nil
+            button.layer.borderColor = button == selectedButton ? ThemeManager().getTheme().settings.tintColor.cgColor : nil
             button.layer.borderWidth = button == selectedButton ? 2 : 0
         }
     }

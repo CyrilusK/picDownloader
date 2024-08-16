@@ -8,5 +8,8 @@
 import UIKit
 
 protocol SettingsViewInputProtocol: AnyObject {
+    var themeButtons: [UIButton] { get }
+    
     func setupUI()
+    func updateButtonStyle(selectedButton: UIButton)
 }

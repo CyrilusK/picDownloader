@@ -25,8 +25,11 @@ final class TabbarConfigurator: TabbarConfiguratorProtocol {
     
     private func setupTabs(for tabBar: TabbarController) {
         tabBar.selectedIndex = 0
-        tabBar.tabBar.tintColor = ThemeManager.shared.getTheme().settings.tintColor
-        tabBar.extendedLayoutIncludesOpaqueBars = true
+        tabBar.tabBar.tintColor = ThemeManager().getTheme().settings.tintColor
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        UITabBar.appearance().standardAppearance = tabBarAppearance
         
         let imageStorage = ImageStorage(imageEncryptor: ImageEncryptor())
         let gridSavedVC = SavedPicturesConfigurator().configure(imageStorage: imageStorage)

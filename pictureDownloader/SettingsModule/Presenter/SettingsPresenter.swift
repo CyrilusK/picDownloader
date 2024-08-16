@@ -12,4 +12,19 @@ final class SettingsPresenter: SettingsOutputProtocol {
     func viewDidLoad() {
         view?.setupUI()
     }
+    
+    func highlightButtonForCurrentTheme(current: Theme) {
+        guard let themeBtns = view?.themeButtons else { return }
+        
+        switch current {
+        case .blue:
+            view?.updateButtonStyle(selectedButton: themeBtns[0])
+        case .red:
+            view?.updateButtonStyle(selectedButton: themeBtns[1])
+        case .green:
+            view?.updateButtonStyle(selectedButton: themeBtns[2])
+        case .system:
+            view?.updateButtonStyle(selectedButton: themeBtns[3])
+        }
+    }
 }

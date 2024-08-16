@@ -37,7 +37,7 @@ final class SavedPicturesViewController: UIViewController, SavedPicturesViewInpu
     }
     
     @objc private func updateColorUI() {
-        let settings = ThemeManager.shared.getTheme().settings
+        let settings = ThemeManager().getTheme().settings
         gridOrCarouselCollectionView.backgroundColor = settings.backgroundColor
         floatingButton.backgroundColor = settings.tintColor.withAlphaComponent(0.3)
     }

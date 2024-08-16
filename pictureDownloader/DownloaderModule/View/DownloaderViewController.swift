@@ -77,7 +77,7 @@ final class DownloaderViewController: UIViewController, DownloaderViewInputProto
     }
     
     @objc private func updateColorUI() {
-        let settings = ThemeManager.shared.getTheme().settings
+        let settings = ThemeManager().getTheme().settings
         view.backgroundColor = settings.backgroundColor
         urlTextField.layer.borderColor = settings.tintColor.cgColor
         searchButton.tintColor = settings.tintColor

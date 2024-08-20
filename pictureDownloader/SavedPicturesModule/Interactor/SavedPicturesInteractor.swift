@@ -16,7 +16,14 @@ final class SavedPicturesInteractor: SavedPicturesInteractorInputProtocol {
     }
     
     func fetchSavedImages() {
-        let images = imageStorage.loadSavedImages()
-        output?.didLoadImages(images)
+        Task {
+            do {
+                let images = try await imageStorage.loadSavedImages()
+                output?.didLoadImages(images)
+            }
+            catch {
+                print("[DEBUG] - Failed to load saved images: \(error)")
+            }
+        }
     }
 }

@@ -55,7 +55,7 @@ final class ImageStorage: ImageStorageProtocol {
         }
     }
     
-    func loadSavedImages() -> [UIImage] {
+    func loadSavedImages() async throws -> [UIImage] {
         var images = [UIImage]()
         
         guard let url = documentsDirUrl() else {
@@ -65,8 +65,7 @@ final class ImageStorage: ImageStorageProtocol {
         do {
             imagePaths = try FileManager.default.contentsOfDirectory(atPath: url.path)
         } catch {
-            print("[DEBUG] - Error fetching image paths: \(error)")
-            return images
+            throw error
         }
         
         for imagePath in imagePaths {
@@ -111,5 +110,4 @@ final class ImageStorage: ImageStorageProtocol {
             }
         }
     }
-    
 }

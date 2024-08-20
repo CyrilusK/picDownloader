@@ -8,5 +8,5 @@
 import UIKit
 
 protocol DownloaderInteractorInputProtocol {
-    func fetchImage(_ url: String)
+    func fetchImage(_ url: String) async
 }

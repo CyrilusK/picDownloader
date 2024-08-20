@@ -27,8 +27,8 @@ final class DownloaderPresenter: DownloaderOutputProtocol {
         }
     }
     
-    func loadImage(_ url: String) {
-        self.interactor?.fetchImage(url)
+    func loadImage(_ url: String) async {
+        await interactor?.fetchImage(url)
     }
     
     func didFailWithError(_ error: Error) {

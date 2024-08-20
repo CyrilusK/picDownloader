@@ -9,14 +9,18 @@ import UIKit
 
 protocol ImageDownloaderProtocol {
     func fetchImage(from url: String, completion: @escaping (Result<UIImage, Error>) -> Void)
+    func fetchImage(from url: String) async throws -> UIImage
 }
 
 protocol ImageStorageProtocol {
     func saveImage(_ image: UIImage, withName name: String)
-    func loadSavedImages() -> [UIImage]
+    func loadSavedImages() async throws -> [UIImage]
     func getImage(withName name: String) -> UIImage?
 }
 
 protocol ImageEditorProtocol {
     func applyFilter(named filterName: String, with image: UIImage, intensity: Float) -> UIImage?
+    func processImagesConcurrently(with image: UIImage) async -> [UIImage]
 }
+
+

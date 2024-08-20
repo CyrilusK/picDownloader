@@ -25,7 +25,7 @@ final class ImageDetailPresenter: ImageDetailOutputProtocol{
     }
     
     func applyFilter(named filterName: String, with image: UIImage, intensity: Float) -> UIImage? {
-        return interactor?.getFilteredImage(named: filterName, with: image, intensity: intensity)
+        interactor?.getFilteredImage(named: filterName, with: image, intensity: intensity)
     }
     
     func didTapCloseButton() {
@@ -71,6 +71,10 @@ final class ImageDetailPresenter: ImageDetailOutputProtocol{
             processedImage = interactor?.getFilteredImage(named: filterName, with: processedImage, intensity: intensity) ?? processedImage
         }
         view?.updateImageView(with: processedImage)
+    }
+    
+    func getFilteredImagesArray() async -> [UIImage] {
+        await interactor?.getFilteredImagesArray(from: image) ?? []
     }
     
 //    func didChangeOrientation(_ orientation: UIDeviceOrientation, size: CGSize) {

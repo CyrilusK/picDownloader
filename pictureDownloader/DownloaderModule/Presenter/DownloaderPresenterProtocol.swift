@@ -11,7 +11,7 @@ protocol DownloaderOutputProtocol: AnyObject {
     var delegate: UITextFieldDelegate? { get }
     
     func viewDidLoad()
-    func loadImage(_ url: String)
+    func loadImage(_ url: String) async
     func didFetchImage(_ image: UIImage)
     func didFailWithError(_ error: Error)
 }

@@ -29,6 +29,15 @@ final class ImageEditor: ImageEditorProtocol {
         guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
         return UIImage(cgImage: cgImage)
     }
+    
+    func processImagesConcurrently(with image: UIImage) async -> [UIImage] {
+        var processedImages: [UIImage] = []
+        for filter in FilterTypes.allCases {
+            async let processedImage = applyFilter(named: filter.rawValue, with: image, intensity: 0.2)
+            processedImages.append(await processedImage ?? image)
+        }
+        return processedImages
+    }
 }
 
 enum FilterTypes: String, CaseIterable {

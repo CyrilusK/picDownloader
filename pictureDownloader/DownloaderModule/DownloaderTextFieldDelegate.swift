@@ -25,7 +25,9 @@ final class DownloaderTextFieldDelegate: NSObject, UITextFieldDelegate {
             return
         }
         textField.text = ""
-        presenter.loadImage(url)
+        Task {
+            await presenter.loadImage(url)
+        }
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {

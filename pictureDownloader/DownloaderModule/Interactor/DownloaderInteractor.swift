@@ -18,7 +18,7 @@ final class DownloaderInteractor: DownloaderInteractorInputProtocol {
     }
     
     //https://cataas.com/cat
-    func fetchImage(_ url: String) {
+    func fetchImage(_ url: String) async {
         let notification = NotificationManager()
         
         let imageName = url.md5 + ".png"
@@ -27,16 +27,24 @@ final class DownloaderInteractor: DownloaderInteractorInputProtocol {
             output?.didFetchImage(cachedImage)
             return
         }
-        
-        imageDownloader.fetchImage(from: url) { [weak self] result in
-            switch result {
-            case .success(let image):
-                self?.imageStorage.saveImage(image, withName: imageName)
-                notification.scheduleDownloadSuccessNotification()
-                self?.output?.didFetchImage(image)
-            case .failure(let error):
-                self?.output?.didFailWithError(error)
-            }
+//        imageDownloader.fetchImage(from: url) { [weak self] result in
+//            switch result {
+//            case .success(let image):
+//                self?.imageStorage.saveImage(image, withName: imageName)
+//                notification.scheduleDownloadSuccessNotification()
+//                self?.output?.didFetchImage(image)
+//            case .failure(let error):
+//                self?.output?.didFailWithError(error)
+//            }
+//        }
+        do {
+            let image = try await imageDownloader.fetchImage(from: url)
+            imageStorage.saveImage(image, withName: imageName)
+            notification.scheduleDownloadSuccessNotification()
+            output?.didFetchImage(image)
+        }
+        catch {
+            output?.didFailWithError(error)
         }
     }
 }

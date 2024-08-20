@@ -76,7 +76,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         var yOffset: CGFloat = 10.0
         let buttonSize: CGFloat = 70.0
         
-        for filter in FilterTypes.allCases {
+        for (index, filter) in FilterTypes.allCases.enumerated() {
             let button = UIButton(type: .system)
             button.setTitle(filter.description, for: .normal)
             button.setTitleColor(.white, for: .normal)
@@ -103,7 +103,13 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
                 let filteredImage = filter == .original ? image : self.output?.applyFilter(named: filter.rawValue, with: image, intensity: 0.2)
                 button.setBackgroundImage(filteredImage, for: .normal)
             }
+//            Task {
+//                guard let images = await output?.getFilteredImagesArray() else { return }
+//                let filteredImage = images[index]
+//                button.setBackgroundImage(filteredImage, for: .normal)
+//            }
         }
+        
         switch UIDevice.current.orientation {
         case .portrait:
             filterScrollView.contentSize = CGSize(width: xOffset, height: buttonSize)
@@ -173,7 +179,9 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     }
 
     func updateImageView(with image: UIImage) {
-        imageView.image = image
+        DispatchQueue.main.async {
+            self.imageView.image = image
+        }
     }
     
     private func updateFilterButtonBorders(selectedButton: UIButton) {

@@ -76,7 +76,7 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         var yOffset: CGFloat = 10.0
         let buttonSize: CGFloat = 70.0
         
-        for (index, filter) in FilterTypes.allCases.enumerated() {
+        for filter in FilterTypes.allCases {
             let button = UIButton(type: .system)
             button.setTitle(filter.description, for: .normal)
             button.setTitleColor(.white, for: .normal)
@@ -103,11 +103,6 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
                 let filteredImage = filter == .original ? image : self.output?.applyFilter(named: filter.rawValue, with: image, intensity: 0.2)
                 button.setBackgroundImage(filteredImage, for: .normal)
             }
-//            Task {
-//                guard let images = await output?.getFilteredImagesArray() else { return }
-//                let filteredImage = images[index]
-//                button.setBackgroundImage(filteredImage, for: .normal)
-//            }
         }
         
         switch UIDevice.current.orientation {
@@ -276,8 +271,6 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
     
     private func orientationDidChange() {
         let currentOrientation = UIDevice.current.orientation
-//        let size = view.bounds.size
-//        output?.didChangeOrientation(currentOrientation, size: size)
         NSLayoutConstraint.deactivate(portraitConstraints + landscapeConstraints)
 
         switch currentOrientation {

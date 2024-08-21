@@ -25,7 +25,7 @@ final class DownloaderTextFieldDelegate: NSObject, UITextFieldDelegate {
             return
         }
         textField.text = ""
-        Task {
+        Task(priority: .userInitiated) {
             await presenter.loadImage(url)
         }
     }

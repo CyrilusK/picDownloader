@@ -9,5 +9,4 @@ import UIKit
 
 protocol ImageDetailInteractorInputProtocol: AnyObject {
     func getFilteredImage(named filterName: String, with image: UIImage, intensity: Float) -> UIImage?
-    func getFilteredImagesArray(from image: UIImage) async -> [UIImage]
 }

@@ -27,6 +27,7 @@ final class DownloaderInteractor: DownloaderInteractorInputProtocol {
             output?.didFetchImage(cachedImage)
             return
         }
+        
 //        imageDownloader.fetchImage(from: url) { [weak self] result in
 //            switch result {
 //            case .success(let image):
@@ -37,6 +38,7 @@ final class DownloaderInteractor: DownloaderInteractorInputProtocol {
 //                self?.output?.didFailWithError(error)
 //            }
 //        }
+        
         do {
             let image = try await imageDownloader.fetchImage(from: url)
             imageStorage.saveImage(image, withName: imageName)

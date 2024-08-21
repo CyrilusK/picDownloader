@@ -21,14 +21,25 @@ final class TabbarInteractor: TabbarInteractorInputProtocol {
             return
         }
         
-        imageDownloader.fetchImage(from: url) { result in
-            switch result {
-            case .success(let image):
+        Task(priority: .background) {
+            do {
+                let image = try await imageDownloader.fetchImage(from: url)
                 imageStorage.saveImage(image, withName: imageName)
                 notification.scheduleDownloadSuccessNotification()
-            case .failure(let error):
+            }
+            catch {
                 self.output?.passResult(message: "Не удалось загрузить изображение: \(error.localizedDescription)")
             }
         }
+        
+//        imageDownloader.fetchImage(from: url) { result in
+//            switch result {
+//            case .success(let image):
+//                imageStorage.saveImage(image, withName: imageName)
+//                notification.scheduleDownloadSuccessNotification()
+//            case .failure(let error):
+//                self.output?.passResult(message: "Не удалось загрузить изображение: \(error.localizedDescription)")
+//            }
+//        }
     }
 }

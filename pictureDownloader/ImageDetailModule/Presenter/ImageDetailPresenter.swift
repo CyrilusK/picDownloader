@@ -24,8 +24,8 @@ final class ImageDetailPresenter: ImageDetailOutputProtocol{
         view?.setupUI(withImage: image)
     }
     
-    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) -> UIImage? {
-        interactor?.getFilteredImage(named: filterName, with: image, intensity: intensity)
+    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) async -> UIImage? {
+        await interactor?.getFilteredImage(named: filterName, with: image, intensity: intensity)
     }
     
     func didTapCloseButton() {
@@ -72,5 +72,35 @@ final class ImageDetailPresenter: ImageDetailOutputProtocol{
         }
         view?.updateImageView(with: processedImage)
     }
-    
+
+//    private func applyAllFilters() {
+//        Task(priority: .userInitiated) {
+//            let processedImage = ProcessedImage(image: image)
+//            await withTaskGroup(of: Void.self) { [ unowned self ] group in
+//                for (filterName, intensity) in filterIntensities where intensity > 0.0 {
+//                    group.addTask { [self] in
+//                        if let filteredImage = await interactor?.getFilteredImage(named: filterName, with: processedImage.image, intensity: intensity) {
+//                            await processedImage.setImage(image: filteredImage)
+//                        }
+//                    }
+//                }
+//            }
+//            view?.updateImageView(with: await processedImage.image)
+//        }
+//    }
+//
+//    actor ProcessedImage {
+//        var image: UIImage
+//
+//        init(image: UIImage) {
+//            self.image = image
+//        }
+//
+//        func setImage(image: UIImage) {
+//            self.image = image
+//        }
+//    }
 }
+
+
+

@@ -20,6 +20,7 @@ protocol ImageStorageProtocol {
 
 protocol ImageEditorProtocol {
     func applyFilter(named filterName: String, with image: UIImage, intensity: Float) -> UIImage?
+    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) async -> UIImage?
 }
 
 

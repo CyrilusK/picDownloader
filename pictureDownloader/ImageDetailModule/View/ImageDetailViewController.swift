@@ -76,44 +76,57 @@ final class ImageDetailViewController: UIViewController, ImageDetailViewInputPro
         var yOffset: CGFloat = 10.0
         let buttonSize: CGFloat = 70.0
         
-        for filter in FilterTypes.allCases {
-            let button = UIButton(type: .system)
-            button.setTitle(filter.description, for: .normal)
-            button.setTitleColor(.white, for: .normal)
-            button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+        Task(priority: .userInitiated) {
+            await withTaskGroup(of: (UIImage?, UIButton).self) { [unowned self] group in
+                for filter in FilterTypes.allCases {
+                    let button = UIButton(type: .system)
+                    button.setTitle(filter.description, for: .normal)
+                    button.setTitleColor(.white, for: .normal)
+                    button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+                    
+                    switch UIDevice.current.orientation {
+                    case .portrait:
+                        button.frame = CGRect(x: xOffset, y: 10, width: buttonSize, height: buttonSize)
+                        xOffset += buttonSize + 10
+                    case .landscapeLeft, .portraitUpsideDown, .landscapeRight:
+                        button.frame = CGRect(x: 10, y: yOffset, width: buttonSize, height: buttonSize)
+                        yOffset += buttonSize + 10
+                    default:
+                        button.frame = CGRect(x: xOffset, y: 10, width: buttonSize, height: buttonSize)
+                        xOffset += buttonSize + 10
+                    }
+                    
+                    button.imageView?.contentMode = .scaleAspectFill
+                    button.layer.cornerRadius = 25
+                    button.clipsToBounds = true
+                    filterScrollView.addSubview(button)
+                    filterButtons.append(button)
+                    
+                    group.addTask {
+                        let originalImage = await self.output?.getOriginalImage()
+                        let filteredImage = await (filter == .original ? originalImage : self.output?.applyFilter(named: filter.rawValue, with: originalImage!, intensity: 0.2))
+                        return (filteredImage, button)
+                    }
+                }
+                
+                for await (filteredImage, button) in group {
+                    if let image = filteredImage {
+                        button.setBackgroundImage(image, for: .normal)
+                    }
+                }
+            }
+            
             switch UIDevice.current.orientation {
             case .portrait:
-                button.frame = CGRect(x: xOffset, y: 10, width: buttonSize, height: buttonSize)
-                xOffset += buttonSize + 10
-            case .landscapeLeft, .portraitUpsideDown, .landscapeRight:
-                button.frame = CGRect(x: 10, y: yOffset, width: buttonSize, height: buttonSize)
-                yOffset += buttonSize + 10
+                filterScrollView.contentSize = CGSize(width: xOffset, height: buttonSize)
+            case .landscapeLeft, .landscapeRight, .portraitUpsideDown:
+                filterScrollView.contentSize = CGSize(width: buttonSize, height: yOffset)
             default:
-                button.frame = CGRect(x: xOffset, y: 10, width: buttonSize, height: buttonSize)
-                xOffset += buttonSize + 10
+                filterScrollView.contentSize = CGSize(width: xOffset, height: buttonSize)
             }
-            button.imageView?.contentMode = .scaleAspectFill
-            button.layer.cornerRadius = 25
-            button.clipsToBounds = true
-            filterScrollView.addSubview(button)
-            filterButtons.append(button)
-            
-            DispatchQueue.main.async {
-                guard let image = self.output?.getOriginalImage() else { return }
-                let filteredImage = filter == .original ? image : self.output?.applyFilter(named: filter.rawValue, with: image, intensity: 0.2)
-                button.setBackgroundImage(filteredImage, for: .normal)
-            }
-        }
-        
-        switch UIDevice.current.orientation {
-        case .portrait:
-            filterScrollView.contentSize = CGSize(width: xOffset, height: buttonSize)
-        case .landscapeLeft, .landscapeRight, .portraitUpsideDown:
-            filterScrollView.contentSize = CGSize(width: buttonSize, height: yOffset)
-        default:
-            filterScrollView.contentSize = CGSize(width: xOffset, height: buttonSize)
         }
     }
+
     
     private func setupZoomScrollView() {
         zoomScrollView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)

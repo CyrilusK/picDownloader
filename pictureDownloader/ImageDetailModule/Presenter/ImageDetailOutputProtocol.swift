@@ -10,7 +10,7 @@ import UIKit
 protocol ImageDetailOutputProtocol: AnyObject {
     func viewDidLoad()
     func didTapCloseButton()
-    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) -> UIImage?
+    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) async -> UIImage?
     func getOriginalImage() -> UIImage
     func filterButtonTapped(_ filterName: String)
     func getValueCurrentFilterIntensities() -> Float

@@ -8,6 +8,7 @@
 import UIKit
 
 final class ImageDownloader: ImageDownloaderProtocol {
+    
     @available(*, deprecated, renamed: "fetchImage")
     func fetchImage(from url: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
         guard let url = URL(string: url) else {

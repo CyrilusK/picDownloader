@@ -953,54 +953,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9E559F43-F4AA-4A31-86D9-C90A4E596403"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "didFailWithError(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9E559F43-F4AA-4A31-86D9-C90A4E596403 - 2ecd7ac726be053a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "pictureDownloader.DownloaderPresenter.didFailWithError(Swift.Error) -&gt; ()"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "9E559F43-F4AA-4A31-86D9-C90A4E596403 - eadffc334bc649c8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in pictureDownloader.DownloaderPresenter.didFailWithError(Swift.Error) -&gt; ()"
-                  moduleName = "pictureDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyrilkardash/Desktop/iOS/projects/picDownloader/pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7D83A93A-F078-4294-BC61-8D67E015E0AB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1008,8 +960,8 @@
             filePath = "pictureDownloader/DownloaderModule/Presenter/DownloaderPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "didFailWithError(_:)"
             landmarkType = "7">
             <Locations>
@@ -2387,9 +2339,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "filterButtonTapped(_:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "setupImageView()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2465,9 +2417,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "filterButtonTapped(_:)"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "setupCloseButton()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2513,10 +2465,10 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "sliderValueChanged(_:)"
-            landmarkType = "7">
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "ImageDetailViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "15DE05EC-9CF7-4FC5-BBBF-0D65CF339D73 - 47d7f9010922c526"
@@ -2561,9 +2513,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "sliderValueChanged(_:)"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "updateImageView(with:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2609,9 +2561,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "filterSwitchValueChanged(_:)"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "updateImageView(with:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2762,9 +2714,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "updateFilterControls(for:)"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "setupCloseButton()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2870,9 +2822,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "updateFilterControls(for:)"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "setupCloseButton()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2978,9 +2930,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "updateFilterControls(for:)"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "setupCloseButton()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -3086,9 +3038,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "updateFilterControls(for:)"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "setupCloseButton()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -3194,8 +3146,8 @@
             filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "filterButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -3257,8 +3209,8 @@
             filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "filterButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -3305,8 +3257,8 @@
             filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "filterButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -3353,8 +3305,8 @@
             filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "filterButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -3416,8 +3368,8 @@
             filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "filterButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -3464,8 +3416,8 @@
             filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "filterButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -3527,8 +3479,8 @@
             filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "filterButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -3605,9 +3557,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3621,9 +3573,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3637,9 +3589,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3653,9 +3605,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3669,9 +3621,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3685,9 +3637,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3701,9 +3653,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3717,9 +3669,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3733,9 +3685,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3749,9 +3701,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3765,9 +3717,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
-            landmarkName = "applyLandscapeConstraints(width:)"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3781,10 +3733,10 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "applyLandscapeConstraints(width:)"
-            landmarkType = "7">
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "ImageDetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3797,8 +3749,8 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "applyLandscapeConstraints(width:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3813,8 +3765,8 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "applyLandscapeConstraints(width:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3829,8 +3781,8 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "applyLandscapeConstraints(width:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3845,9 +3797,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
-            landmarkName = "applyPortraitConstraints()"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "setImage(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -3908,9 +3860,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
-            landmarkName = "applyPortraitConstraints()"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "setImage(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -3971,10 +3923,10 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "applyPortraitConstraints()"
-            landmarkType = "7">
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "ImageDetailViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "49B9BC21-9805-482A-9D27-ABE844562EB1 - 4a2875c93fd32ac4"
@@ -4034,9 +3986,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
-            landmarkName = "applyPortraitConstraints()"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "closeButtonTapped()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -4112,9 +4064,9 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "applyPortraitConstraints()"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "closeButtonTapped()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -4190,10 +4142,10 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "applyPortraitConstraints()"
-            landmarkType = "7">
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "ImageDetailViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "F34E6194-30C5-4B30-8B3E-C84B6BB82385 - 4a2875c93fd32bed"
@@ -4268,8 +4220,8 @@
             filePath = "pictureDownloader/ImageDetailModule/View/ImageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "applyPortraitConstraints()"
             landmarkType = "7">
             <Locations>
@@ -4349,86 +4301,6 @@
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "setupFilterButtons()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "020E3A18-710C-453C-9828-6CF7654F3DCD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "applyAllFilters()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B3387E1A-4E12-4FD4-AD4D-0CB3DC313D6B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "applyAllFilters()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "11946889-55CC-4DEF-8CD4-83A05997E322"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "applyAllFilters()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FEBC24B2-39FC-42BC-801B-9AC9A0852253"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "applyAllFilters()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "410CD4D1-A04F-4904-A0E9-32F43907D02F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pictureDownloader/ImageDetailModule/Presenter/ImageDetailPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "applyAllFilters()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

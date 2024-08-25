@@ -7,12 +7,29 @@
 
 import UIKit
 
+enum ImageFetchError: Error {
+    case invalidURL
+    case invalidImageData
+    case serverError
+    
+    var errorDescription: String {
+        switch self {
+        case .invalidURL:
+            return Constants.invalidURL
+        case .serverError:
+            return Constants.serverError
+        case .invalidImageData:
+            return Constants.invalidImageData
+        }
+    }
+}
+
 final class ImageDownloader: ImageDownloaderProtocol {
     
     @available(*, deprecated, renamed: "fetchImage")
     func fetchImage(from url: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
         guard let url = URL(string: url) else {
-            completion(.failure(NSError(domain: "App", code: 500, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+            completion(.failure(ImageFetchError.invalidURL))
             return
         }
         
@@ -24,7 +41,7 @@ final class ImageDownloader: ImageDownloaderProtocol {
             }
             
             guard let data = data, let image = UIImage(data: data) else {
-                completion(.failure(NSError(domain: "App", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to decode image data"])))
+                completion(.failure(ImageFetchError.invalidImageData))
                 return
             }
             
@@ -35,14 +52,18 @@ final class ImageDownloader: ImageDownloaderProtocol {
     
     func fetchImage(from url: String) async throws -> UIImage {
         guard let url = URL(string: url) else {
-            throw NSError(domain: "App", code: 500, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            throw ImageFetchError.invalidURL
         }
         print("[DEBUG] - Start fetching")
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw ImageFetchError.serverError
+        }
         
         guard let image = UIImage(data: data) else {
-            throw NSError(domain: "App", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to decode image data"])
+            throw ImageFetchError.invalidImageData
         }
         return image
     }

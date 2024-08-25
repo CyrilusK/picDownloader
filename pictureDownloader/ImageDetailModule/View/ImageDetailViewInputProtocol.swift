@@ -8,11 +8,10 @@
 import UIKit
 
 protocol ImageDetailViewInputProtocol: AnyObject {
+    var filterButtons: [UIButton] { get }
+    
     func setupUI(withImage image: UIImage)
     func updateImageView(with image: UIImage)
     func updateFilterControls(for filter: FilterTypes)
     func hideSwitch()
-//    func applyPortraitConstraints()
-//    func applyLandscapeConstraints(width: CGFloat)
-//    func setupFilterButtons()
 }

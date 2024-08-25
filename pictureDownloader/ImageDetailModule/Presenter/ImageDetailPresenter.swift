@@ -24,10 +24,6 @@ final class ImageDetailPresenter: ImageDetailOutputProtocol{
         view?.setupUI(withImage: image)
     }
     
-    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) async -> UIImage? {
-        await interactor?.getFilteredImage(named: filterName, with: image, intensity: intensity)
-    }
-    
     func didTapCloseButton() {
         router?.dismiss()
     }
@@ -72,34 +68,32 @@ final class ImageDetailPresenter: ImageDetailOutputProtocol{
         }
         view?.updateImageView(with: processedImage)
     }
-
-//    private func applyAllFilters() {
-//        Task(priority: .userInitiated) {
-//            let processedImage = ProcessedImage(image: image)
-//            await withTaskGroup(of: Void.self) { [ unowned self ] group in
-//                for (filterName, intensity) in filterIntensities where intensity > 0.0 {
-//                    group.addTask { [self] in
-//                        if let filteredImage = await interactor?.getFilteredImage(named: filterName, with: processedImage.image, intensity: intensity) {
-//                            await processedImage.setImage(image: filteredImage)
-//                        }
-//                    }
-//                }
-//            }
-//            view?.updateImageView(with: await processedImage.image)
-//        }
-//    }
-//
-//    actor ProcessedImage {
-//        var image: UIImage
-//
-//        init(image: UIImage) {
-//            self.image = image
-//        }
-//
-//        func setImage(image: UIImage) {
-//            self.image = image
-//        }
-//    }
+    
+    func applyFilterForButton(with image: UIImage) async -> [UIImage] {
+        var result = [UIImage]()
+        
+        await withTaskGroup(of: UIImage.self) { [unowned self] group in
+            for filter in FilterTypes.allCases {
+                group.addTask {
+                    let filteredImage = filter == .original ? image : self.interactor?.getFilteredImage(named: filter.rawValue, with: image, intensity: 0.2)
+                    return filteredImage ?? image
+                }
+            }
+            
+            for await filteredImage in group {
+                result.append(filteredImage)
+            }
+        }
+        return result
+    }
+    
+    func updateFilterButtonBorders(selectedButton: UIButton) {
+        guard let filterButtons = view?.filterButtons else { return }
+        for button in filterButtons {
+            button.layer.borderColor = button == selectedButton ? ThemeManager().getTheme().settings.tintColor.cgColor : nil
+            button.layer.borderWidth = button == selectedButton ? 2 : 0
+        }
+    }
 }
 
 

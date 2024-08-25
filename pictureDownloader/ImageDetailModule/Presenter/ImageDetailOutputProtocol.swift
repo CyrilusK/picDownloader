@@ -10,10 +10,11 @@ import UIKit
 protocol ImageDetailOutputProtocol: AnyObject {
     func viewDidLoad()
     func didTapCloseButton()
-    func applyFilter(named filterName: String, with image: UIImage, intensity: Float) async -> UIImage?
+    func applyFilterForButton(with image: UIImage) async -> [UIImage]
     func getOriginalImage() -> UIImage
     func filterButtonTapped(_ filterName: String)
     func getValueCurrentFilterIntensities() -> Float
     func sliderValueChanged(_ value: Float)
     func filterSwitchValueChanged(_ isOn: Bool)
+    func updateFilterButtonBorders(selectedButton: UIButton)
 }

@@ -17,8 +17,4 @@ final class ImageDetailInteractor: ImageDetailInteractorInputProtocol {
     func getFilteredImage(named filterName: String, with image: UIImage, intensity: Float) -> UIImage? {
         imageEditor.applyFilter(named: filterName, with: image, intensity: intensity)
     }
-    
-    func getFilteredImage(named filterName: String, with image: UIImage, intensity: Float) async -> UIImage? {
-        await imageEditor.applyFilter(named: filterName, with: image, intensity: intensity)
-    }
 }

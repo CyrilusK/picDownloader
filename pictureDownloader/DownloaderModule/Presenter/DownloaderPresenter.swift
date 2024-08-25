@@ -33,7 +33,11 @@ final class DownloaderPresenter: DownloaderOutputProtocol {
     
     func didFailWithError(_ error: Error) {
         DispatchQueue.main.async {
-            self.view?.displayError("Failed to load image: \(error.localizedDescription)")
+            if let imageFetchError = error as? ImageFetchError {
+                self.view?.displayError("Failed to load image: \(imageFetchError.errorDescription)")
+            } else {
+                self.view?.displayError("Failed to load image: \(error.localizedDescription)")
+            }
         }
     }
 }
